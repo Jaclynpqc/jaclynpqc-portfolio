@@ -11,6 +11,10 @@ module.exports = {
 				background: 'var(--background)',
 				foreground: 'var(--foreground)',
 				seashell: '#F9F6F3',
+        maxyellowred: '#F2BA5A',
+        midyellowred: 'F3AF7E',
+        darksalmon: 'EF9381',
+        antiquewhite: 'FBE9DB'
 			},
 			fontFamily: {
 				instrument: ['Instrument Serif', 'serif'],
