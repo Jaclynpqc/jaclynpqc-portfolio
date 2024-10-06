@@ -1,5 +1,5 @@
-import './App.css'
-import {Contact, Experience, Hero, Portfolio} from "./components";
+import { useEffect, useRef } from 'react';
+import { Contact, Experience, Hero, Navbar, Portfolio } from "./components";
 
 function App() {
   return(
@@ -10,6 +10,6 @@ function App() {
       <Contact />
     </div>
   );
-}
+};
 
-export default App
+export default App;

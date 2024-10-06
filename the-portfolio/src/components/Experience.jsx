@@ -1,4 +1,4 @@
-const Experiecne = () => {
+const Experience = () => {
     return(
         <div id = "experience" className ="Section">
             <h1> Experience</h1>
