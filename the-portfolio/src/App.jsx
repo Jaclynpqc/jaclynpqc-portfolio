@@ -35,6 +35,7 @@ const HeroSection = () =>{
   return(
       // Main container with full height and hidden overflow
       <div className = "relative h-screen overflow-hidden">
+          {/* Grainy gradient beige background */}
           {/*Content container */}
           <div className = "absolute inset-0 z-0 flex items-start justify-center pt-40">
             <h1 className = "text-6xl font-bold text-blue-100 font-sans">Welcome to Our Flower Field</h1>
