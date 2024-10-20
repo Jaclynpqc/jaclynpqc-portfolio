@@ -41,8 +41,8 @@ export default function NavigationBar({fontStyle = 'inter'}){
             <div className="flex items-center space-x-8">
                 {[
                 { text: 'WORK', href: '#work' },
-                { text: 'SERVICES', href: '#services' },
                 { text: 'ABOUT', href: '#about' },
+                { text: 'CV', href: '#cv' },
                 { text: 'CONTACT', href: '#contact' }
                 ].map((item) => (
                 <a
