@@ -5,6 +5,7 @@ import flowerFieldSVG from './assets/flower_field.svg';
 import Matter from 'matter-js';
 import NavigationBar from './components/NavBar';
 import HeroSection from './components/HeroSection';
+import Projects from './components/Projects';
 
 /*
 const HeroSection = () =>{
@@ -62,6 +63,7 @@ function App() {
     <div>
       <NavigationBar />
       <HeroSection />
+      <Projects />
     </div>
   )
 }
