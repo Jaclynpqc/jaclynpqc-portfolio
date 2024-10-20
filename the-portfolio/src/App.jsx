@@ -4,6 +4,7 @@ import {useState, useEffect, useRef} from 'react';
 import flowerFieldSVG from './assets/flower_field.svg';
 import Matter from 'matter-js';
 import NavigationBar from './components/NavBar';
+import HeroSection from './components/HeroSection';
 
 /*
 const HeroSection = () =>{
@@ -60,6 +61,7 @@ function App() {
   return (
     <div>
       <NavigationBar />
+      <HeroSection />
     </div>
   )
 }

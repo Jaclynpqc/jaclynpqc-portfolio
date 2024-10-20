@@ -1,51 +1,44 @@
 /* eslint-disable no-unused-vars */
-import React , {useState, useEffect} from 'react';
-import { ReactComponent as FlowerFieldSVG } from '../assets/flower_field.svg';
+import React from 'react';
+import {Circle} from 'lucide-react';
 
-const HeroSection = () =>{
-    // State to track the mouse position
-    const [mousePosition, setMousePosition] = useState({x:0, y: 0});
-
-    useEffect(() => {
-        // Function to update mouse position
-        const handleMouseMove = (event) => {
-            setMousePosition({x: event.clientX, y: event.clientY});
-        };
-
-        // Add event listener when component mounts
-        window.addEventListener('mousemove', handleMouseMove);
-
-        // Clean up event listener when component unmounts
-        return() => {
-            window.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, []); // Empty dependency array means this effect runs once on mount
-
-
-    //Calculate background position based on mouse movement
-    // Divide by 100 to make the movement more subtle
-    const backgroundStyle = {
-        transform: `translate(${mousePosition.x / 100}px, ${mousePosition.y / 100}px)`,
-    };
-
-
-    return(
-        // Main container with full height and hidden overflow
-        <div className = "relative h-screen overflow-hidden">
-            {/*Moing SVG background*/}
-            <FlowerFieldSVG 
-            className="absolute inset-0 w-full h-full transition-transform duration-300 ease-out"
-            style={backgroundStyle}
-            />
-
-            {/*Content container */}
-            <div className = "relative z-10 flex items-center justify-center h-full text-blue-300">
-                <div className = "text-center">
-                    <h1 className = "text-5xl font-bold mb-4"> Welcome to Our Flower Field</h1>
-                </div>
-            </div>
+export default function HeroSection() {
+    return (
+      <div className="min-h-screen bg-stone-50 flex items-center justify-center px-4">
+        <div className="max-w-4xl mx-auto text-center relative">
+          {/* Decorative elements */}
+          <div className="absolute -top-16 right-[15%] w-32 h-32 bg-[url('/api/placeholder/320/320')] rounded-sm rotate-3 opacity-80" />
+          
+          {/* Main text */}
+          <p className="text-3xl md:text-4xl lg:text-5xl leading-relaxed md:leading-relaxed lg:leading-relaxed relative">
+            <span className="font-['Inter'] font-light">Jaclyn is an</span>{' '}
+            <span className="font-['Ballet'] text-5xl md:text-5xl lg:text-7xl">interactive</span>{' '}
+            <span className="font-['Inter'] font-light">designer from</span>{' '}
+            <span className="font-['Ballet'] text-4xl md:text-5xl lg:text-6xl">Vietnam,</span>
+            <br />
+            <span className="font-['Inter'] font-light">based in</span>{' '}
+            <span className="font-['Ballet'] text-4xl md:text-5xl lg:text-6xl">United States</span>{' '}
+            <span className="font-['Inter'] font-light">with a</span>{' '}
+            <br />
+            <span className="font-['Ballet'] text-4xl md:text-5xl lg:text-6xl">strong love</span>{' '}
+            <span className="font-['Inter'] font-light">for travelling. Her works lie in the</span>
+            <br />
+            <span className="font-['Inter'] font-light">intersection of</span>{' '}
+            <span className="font-['Ballet'] text-4xl md:text-5xl lg:text-6xl">design,</span>{' '}
+            <span className="font-['Inter'] font-light">technology, and</span>{' '}
+            <br />
+            <span className="font-['Ballet'] text-4xl md:text-5xl lg:text-6xl">marketing.</span>{' '}
+            <span className="font-['Inter'] font-light">She believes that a</span>{' '}
+            <br />
+            <span className="font-['Ballet'] text-4xl md:text-5xl lg:text-6xl">touch</span>{' '}
+            <span className="font-['Inter'] font-light">can go a long way in telling</span>
+            <br />
+            <span className="font-['Ballet'] text-4xl md:text-5xl lg:text-6xl tracking-wider">unspoken stories.</span>
+          </p>
+          
+          {/* Decorative elements */}
+          <div className="absolute -bottom-20 left-[10%] w-32 h-32 bg-[url('/api/placeholder/320/320')] rounded-sm -rotate-6 opacity-80" />
         </div>
+      </div>
     );
-};
-
-export default HeroSection;
+  }
