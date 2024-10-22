@@ -10,7 +10,7 @@ const ProjectCard = ( {project}) => (
                 <img 
                 src = {project.image}
                 alt = {project.title}
-                className = "w-full h-auto object-cover transition-opacity hover:opacity-90"
+                className = " scale-125 w-full h-auto object-cover transition-opacity hover:scale-150 hover:brightness-50"
                 />
             </a>
 

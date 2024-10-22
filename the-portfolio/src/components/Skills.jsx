@@ -1,155 +1,142 @@
 /* eslint-disable no-unused-vars */
-import React, {useEffect, useRef} from 'react';
-import Matter from 'matter-js';
+/* eslint-disable react/prop-types */
+import React, {useState} from 'react';
 
-const FallingObject = () => {
-    const sceneRef = useRef(null);
-    const engineRef = useRef(null);
+const SkillsBag = () => {
+    const [hoveredBag, setHoveredBag] = useState(false);
 
-    useEffect(() => {
-        //Destruct the Matter.js modules
-        const Engine = Matter.Engine,
-          Render = Matter.Render,
-          Runner = Matter.Runner,
-          MouseConstraint = Matter.MouseConstraint,
-          Mouse = Matter.Mouse,
-          Composite = Matter.Composite,
-          Bodies = Matter.Bodies;
-
-        // Create a Matter.js engine
-        const engine = Engine.create();
-        engineRef.current = engine;
-
-        //Create a renderer
-        const render = Render.create({
-            element: sceneRef.current, // Render the scene in our div
-            engine: engine,
-            options: {
-              width: 800,
-              height: 600,
-              wireframes: false,
-              background: '#f0f0f0'
-            }
-          });
-        
-        //Create a runner to handle animation updates
-        const runner = Runner.create();
-
-        //Get a reference to the world object (where we'll add bodies)
-        const world = engine.world;
-
-        // Add walls to contain our shapes
-    Composite.add(world, [
-        // Top wall
-        Bodies.rectangle(400, 0, 800, 50, { isStatic: true, render: { fillStyle: '#060a19' } }),
-        // Bottom wall
-        Bodies.rectangle(400, 600, 800, 50, { isStatic: true, render: { fillStyle: '#060a19' } }),
-        // Right wall
-        Bodies.rectangle(800, 300, 50, 600, { isStatic: true, render: { fillStyle: '#060a19' } }),
-        // Left wall
-        Bodies.rectangle(0, 300, 50, 600, { isStatic: true, render: { fillStyle: '#060a19' } })
-      ]);
-
-      // Define  skills with their corresponding shapes and colors
-    const skills = [
-        { 
-          name: 'React', 
-          color: '#61DAFB', 
-          shape: Bodies.rectangle(200, 200, 100, 100, { 
-            chamfer: { radius: 20 }, // Rounded corners
-            render: { fillStyle: '#61DAFB' } 
-          }) 
+    //DESIGN SKILLS
+    const designSkills = [
+        {
+            name: 'Figma',
+            imgPath: '/src/assets/figma_logo.png',
+            translateClass: '-translate-y-16 translate-x-8 rotate-12'
         },
-        { 
-          name: 'Tailwindcss', 
-          color: '#41B883', 
-          shape: Bodies.rectangle(300, 200, 100, 100, { 
-            chamfer: { radius: [90, 0, 0, 0] }, // Only top-left corner rounded
-            render: { fillStyle: '#41B883' } 
-          }) 
+        {
+            name: 'TouchDesigner',
+            imgPath: '/src/assets/touchdesigner.webp',
+            translateClass: '-translate-y-24 translate-x-4 rotate-6'
         },
-        { 
-          name: 'HTML', 
-          color: '#DD0031', 
-          shape: Bodies.rectangle(400, 200, 200, 200, { 
-            chamfer: { radius: [150, 20, 40, 20] }, // Different rounding for each corner
-            render: { fillStyle: '#DD0031' } 
-          }) 
+        {
+            name: 'Adobe Illustrator',
+            imgPath: '/src/assets/adobeAI.png',
+            translateClass: '-translate-y-32 translate-x-2'
         },
-        { 
-          name: 'CSS', 
-          color: '#68A063', 
-          shape: Bodies.rectangle(200, 400, 200, 50, { 
-            chamfer: { radius: [25, 25, 0, 0] }, // Only top corners rounded
-            render: { fillStyle: '#68A063' } 
-          }) 
+        {
+            name: 'Adobe Premiere Pro',
+            imgPath: '/src/assets/adobeAI.png',
+            translateClass: '-translate-y-24 -translate-x-8 -rotate-6'
         },
-        { 
-          name: 'Python', 
-          color: '#3776AB', 
-          shape: Bodies.polygon(300, 100, 8, 80, { 
-            chamfer: { radius: 30 }, // Rounded corners on octagon
-            render: { fillStyle: '#3776AB' } 
-          }) 
+        {
+            name: 'Adobe Aero',
+            imgPath: '/src/assets/adobeAero.png',
+            translateClass: '-translate-y-16 -translate-x-12 -rotate-12'
         },
-        { 
-          name: 'JavaScript', 
-          color: '#F7DF1E', 
-          shape: Bodies.polygon(400, 300, 6, 80, { 
-            chamfer: { radius: [10, 40, 20, 40, 10, 40] }, // Different rounding for each corner of hexagon
-            render: { fillStyle: '#F7DF1E' } 
-          }) 
+    ];
+
+
+    // Programming Skills
+    const programmingSkills = [
+        {
+            name: 'React',
+            imgPath: 'src/assets/react.svg',
+            translateClass: '-translate-y-16 translate-x-8 rotate-12'
         },
-        { 
-          name: 'Figma', 
-          color: '#007ACC', 
-          shape: Bodies.polygon(500, 200, 3, 80, { 
-            chamfer: { radius: [20, 0, 20] }, // Rounded corners on triangle
-            render: { fillStyle: '#007ACC' } 
-          }) 
-        }
-      ];
+        {
+            name: 'TailwindCSS',
+            imgPath: '/src/assets/tailwind.webpsrc/assets/react.svg',
+            translateClass: '-translate-y-24 translate-x-4 rotate-6'
+        },
+        {
+            name: 'HTML5',
+            imgPath: '/src/assets/html5.webp',
+            translateClass: '-translate-y-32 translate-x-2'
+        },
+        {
+            name: 'CSS',
+            imgPath: '/src/assets/css.webp',
+            translateClass: '-translate-y-24 translate-x-8 -rotate-6'
+        },
+        {
+            name: 'JavaScript',
+            imgPath: '/src/assets/css.webp',
+            translateClass: '-translate-y-24 translate-x-8 -rotate-6'
+        },
+        {
+            name: 'Python',
+            imgPath: '/src/assets/python.webp',
+            translateClass: '-translate-y-24 translate-x-10 -rotate-6'
+        },
+        {
+            name: 'Processing',
+            imgPath: '/src/assets/processing.webp',
+            translateClass: '-translate-y-24 translate-x-10 -rotate-12'
+        },
+    ];
 
-      //Add all skill shapes to the world
-      Composite.add(world, skills.map(skill => skill.shape));
+    // Bag component
+    const Bag = ({type, skills, imgPath}) => (
+        <div className = "relative w-72 h-96">
+            {/* Floating */}
+            < div className = "absolute inset-0 flex items-center justify-center">
+            { skills. map((skill, index) => (
+                <div
+                key = {skill.name}
+                className = {`
+                    absolute left-1/2 bottom-1/2
+                    transform transition-all duration-500 ease-in-out
+                    ${hoveredBag === type ? skill.translateClass : 'translate-y-0 translate-x-0 opacity-0'}
+                    ${hoveredBag === type ? 'opacity-100' : 'opacity-0'}
+                  `}
+                style = {{
+                    transitionDelay: '${index*100}ms'
+                }}
+                >
+                    <img
+                    src = {skill.imgPath}
+                    alt={skill.name}
+                    className = "w-12 h-12 object-contain"
+                    />
+                </div>
+            ))}
+            </div>
 
-      //Add mouse control
-      const mouse = Mouse.create(render.canvas);
-      const mouseConstraint = MouseConstraint.create(engine,{
-        mouse: mouse,
-        constraint: {
-            stiffness: 0.2,
-            render: {
-                visible: false
-            }
-        }
-      });
-
-      //Add the mouse constraint to the world
-      Composite.add(world, mouseConstraint);
-
-      //Keep the mouse in sync with rendering
-      render.mouse = mouse;
-
-      //Run the renderer
-      Render.run(render);
-
-      //Run the engine
-      Runner.run(runner, engine);
-
-      //Cleanup function to stop rendering and runnning when component unmounts
-      return() => {
-        Render.stop(render);
-        Runner.stop(runner);
-        Engine.clear(engine);
-      }
-    }, []); //Empty dependency array means this effect runs once on mount
+            {/* Bag Image */}
+            <div
+            className = "absolute bottom-0 left-1/2 -translate-x-1/2 cursor-pointer scale-150"
+            onMouseEnter = {() => setHoveredBag(type)}
+            onMouseLeave = {() => setHoveredBag(null)}
+            >
+                <img
+                src = {imgPath}
+                alt = {'${type} skills bag'}
+                className = "w-48 h-auto transform transition-all duration-300 ease-in-out scale-150 hover:scale-175"
+                />
+            </div>
+        </div>
+    );
 
     return(
-        <div className = "w-full h-screen flex justify-center items-center bg-gray-100">
-            <div ref ={sceneRef} className = "border border-gray-300 shadow-log" />
+        <div className = "relative min-h-[600px] w-full flex flex-col items-center justify-center p-8">
+            {/* Title */}
+            <h2 className = "text-4xl font-['Inter'] text-gray-800 mb-4 "> I WEAR MANY HATS ... OR BAGS</h2>
+            <p className = "font-['Inter'] text-3xl text-gray-700">hover to take a peak</p>
+
+            {/* Bags container */}
+            <div className = "flex flex-wrap justify-center gap-24">
+                <Bag 
+                type = "developer"
+                skills = {programmingSkills}
+                imgPath={"/src/assets/baggu_black.svg"}
+                />
+                <Bag
+                type = "designer"
+                skills = {designSkills}
+                imgPath={"/src/assets/baggu_red.svg"}
+                />
+            </div>
         </div>
     );
 };
 
-export default FallingObject;
+export default SkillsBag;

@@ -6,6 +6,7 @@ import Matter from 'matter-js';
 import NavigationBar from './components/NavBar';
 import HeroSection from './components/HeroSection';
 import Projects from './components/Projects';
+import SkillsBag from './components/Skills';
 
 /*
 const HeroSection = () =>{
@@ -63,6 +64,7 @@ function App() {
     <div>
       <NavigationBar />
       <HeroSection />
+      <SkillsBag />
       <Projects />
     </div>
   )
