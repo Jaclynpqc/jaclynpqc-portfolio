@@ -71,7 +71,7 @@ export default function Projects (){
 
     return(
         <section className = "py-20 px-8 bg-white">
-            <div className = "max-w-6xl mx-auto">
+            <div className = "max-w-7xl mx-auto">
                 <h1 className = "font-['Ballet'] text-6xl md:text-8xl mb-20 text-center tracking-wider italic text-red-800">
                     A collection of Senses
                 </h1>

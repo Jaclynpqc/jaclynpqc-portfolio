@@ -98,7 +98,7 @@ export default function HeroSection() {
     return (
       <div className="min-h-screen bg-stone-50 flex items-center justify-center px-4">
         <MouseTrailCanvas />
-        <div className="max-w-4xl mx-auto text-center relative">
+        <div className="max-w-8xl mx-auto text-center relative">
           {/* Decorative elements */}
           <div className="absolute -top-16 right-[15%] w-32 h-32 bg-[url('/api/placeholder/320/320')] rounded-sm rotate-3 opacity-80" />
           

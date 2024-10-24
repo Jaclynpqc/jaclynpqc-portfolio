@@ -22,11 +22,12 @@ export default function NavigationBar({fontStyle = 'inter'}){
 
     return (
         <header 
-        className={`fixed top-0 left-0 right-0 transition-all duration-300 z-50 
+        className={`fixed top-0 left-0 right-0 transition-all w-full duration-300 z-50 
         ${isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'}
         ${fontStyles[fontStyle]}`}
         >
-        <div className="max-w-6xl mx-auto px-6">
+            <div className = "w-full bg-inherit">
+        <div className="max-w-8xl mx-auto px-6">
             <nav className="flex justify-between items-center h-20">
             {/* Logo/Name */}
             <a 
@@ -57,6 +58,7 @@ export default function NavigationBar({fontStyle = 'inter'}){
                 ))}
             </div>
             </nav>
+        </div>
         </div>
         </header>
     );

@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -182,8 +182,8 @@ const ProductShowcase = () => {
                 transition-all 
                 duration-300 
                 max-w-[300px]
-                ${index === 0 ? 'mt-5 right-1 md:absolute md:top-0 scale-150 lg:right-0' : ''}
-                ${index === 1 ? 'md:justify-self-center mb-5 mt-8 left-10 sm:left-0 scale-150 md:mt-0 md:ml-5' : ''}
+                ${index === 0 ? 'mt-5 right-0 md:absolute md:top-0 scale-150 lg:right-0' : ''}
+                ${index === 1 ? 'md:justify-self-center mb-5 mt-8 sm:left-0 scale-150 md:mt-0 md:ml-5' : ''}
                 mx-auto
               `}
               onMouseEnter={() => setHoveredIndex(index)}

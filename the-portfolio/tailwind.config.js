@@ -10,6 +10,13 @@ export const theme = {
       secondary: "#F0EFEB",
       tertiary: "#0D3056",
       quaternary: "#1689C8",
+      blueston: '#BDC9CB',
+      organzapeach: '#FBEEDA',
+      bloodymary: '#BA0105',
+      bordeaux: '#7B002C',
+      furioustiger: '#EA5814',
+      purpletulip: '#40002B',
+      alpineberryyellow: '#f7e0ba'
     },
     screens: {
       'xs': "450px",
