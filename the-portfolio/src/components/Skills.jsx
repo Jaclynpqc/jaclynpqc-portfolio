@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const ProductShowcase = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  // Adding dynamic position for web layout
+  const containerRef = useRef(null);
 
   const designSkills = [
     {
@@ -99,7 +101,8 @@ const ProductShowcase = () => {
       color: "black",
       alt: "Black handbag with flower accent",
       title: "Developer",
-      skills: programmingSkills
+      skills: programmingSkills, 
+      hover : 'className = brightness-50'
     },
     {
       id: 2,
@@ -182,8 +185,8 @@ const ProductShowcase = () => {
                 transition-all 
                 duration-300 
                 max-w-[300px]
-                ${index === 0 ? 'mt-5 right-1 md:absolute md:top-0 scale-150 lg:right-0' : ''}
-                ${index === 1 ? 'md:justify-self-center mb-5 mt-8 left-10 sm:left-0 scale-150 md:mt-0 md:ml-5' : ''}
+                ${index === 0 ? 'sm:right-10 md:right-0 lg:right-0 mt-5 right-1 md:absolute md:top-0 scale-150' : ''}
+                ${index === 1 ? 'md:justify-self-center mb-5 mt-8 left-10 sm:left-10 md:left-0 right:left-0 scale-150 md:mt-0 md:ml-5' : ''}
                 mx-auto
               `}
               onMouseEnter={() => setHoveredIndex(index)}
@@ -197,10 +200,12 @@ const ProductShowcase = () => {
                 />
                 
                 {hoveredIndex === index && (
+                    <div className = "absolute top-0 left-0 right-0 w-full h-full">
                   <SkillsAnimation 
                     skills={product.skills}
                     index={index}
                   />
+                  </div>
                 )}
               </div>
             </div>
