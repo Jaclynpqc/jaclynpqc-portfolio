@@ -42,7 +42,7 @@ const DragElem = ({src, initialX, initialY}) => {
     <img
       ref={elementRef}
       src={src}
-      className={`absolute cursor-move w-33 h-33 select-none transition-opacity ${isDragging ? 'opacity-80' : 'opacity-100'}`}
+      className={`absolute cursor-move w-32 h-32 select-none transition-opacity ${isDragging ? 'opacity-80' : 'opacity-100'}`}
       style={{
         transform: `translate(${position.x}px, ${position.y}px)`,
         zIndex: isDragging ? 50 : 1
@@ -57,14 +57,15 @@ const DragElem = ({src, initialX, initialY}) => {
 const HeroSection = () => {
   // Array of your flatlay images with their initial positions
   const flatlayElements = [
-    { src: '/src/assets/laptop.svg', x: 100, y: 50 },
-    { src: '/src/assets/glasses.svg', x: 300, y: 100 },
-    { src: '/src/assets/lipbalm.svg', x: 500, y: 150 },
-    { src: '/src/assets/digicam.svg', x: 500, y: 150 },
-    { src: '/src/assets/clawclips.svg', x: 200, y: 150 },
-    { src: '/src/assets/ballet_shoes.svg', x: 200, y: 150 },
-    { src: '/src/assets/coffee.svg', x: 200, y: 150 },
-    { src: '/src/assets/headphones.svg', x: 200, y: 150 },
+    { src: '/src/assets/laptop.svg', x:50, y: 150},
+    { src: '/src/assets/glasses.svg', x: 200, y: -50 },
+    { src: '/src/assets/lipbalm.svg', x: 400, y: 150 },
+    { src: '/src/assets/digicam.svg', x: 700, y: 150 },
+    { src: '/src/assets/clawclips.svg', x: 700, y: 290 },
+    { src: '/src/assets/ballet_shoes.svg', x: 200, y: 700 },
+    { src: '/src/assets/coffee.svg', x: 800, y: 600 },
+    { src: '/src/assets/headphones.svg', x: 900, y: -80 },
+    { src: '/src/assets/headphones.svg', x: 900, y: -80 },
   ];
 
   return (
