@@ -54,6 +54,31 @@ const DragElem = ({src, initialX, initialY}) => {
   );
 }
 
+/* Add Prompt for Users */
+const DragPrompt = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+    }, 5000); // Hide after 5 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!isVisible) return null;
+
+  return (
+    <div className="fixed top-20 mt-15 left-1/2 transform -translate-x-1/2 z-50 transition-opacity duration-500">
+      <div className="bg-white/90 border-bloodymary rounded-md shadow-lg">
+        <p className="text-lg font-[Karla] text-furioustiger">
+          Try dragging the elements around! ✨
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const HeroSection = () => {
   // Array of your flatlay images with their initial positions
   const flatlayElements = [
@@ -62,14 +87,14 @@ const HeroSection = () => {
     { src: '/src/assets/lipbalm.svg', x: 400, y: 150 },
     { src: '/src/assets/digicam.svg', x: 700, y: 150 },
     { src: '/src/assets/clawclips.svg', x: 700, y: 290 },
-    { src: '/src/assets/ballet_shoes.svg', x: 200, y: 700 },
+    { src: '/src/assets/ballet_shoes.svg', x: 200, y: 500 },
     { src: '/src/assets/coffee.svg', x: 800, y: 600 },
-    { src: '/src/assets/headphones.svg', x: 900, y: -80 },
     { src: '/src/assets/headphones.svg', x: 900, y: -80 },
   ];
 
   return (
     <div className="min-h-screen bg-stone-50 flex items-center justify-center px-4 overflow-hidden">
+      <DragPrompt />
       <div className="max-w-6xl mx-auto text-center relative">
         {/* Flatlay Elements */}
         {flatlayElements.map((element, index) => (
