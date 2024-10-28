@@ -2,48 +2,37 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
-const ProjectCard = ( {project}) => (
-    <div className = "mb-24">
-        <div className = "grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            {/* Project Image */}
-            <a href = {project.link} className = {`block ${project.imageRight ? 'md:order-last' : ''}`}>
-                <img 
-                src = {project.image}
-                alt = {project.title}
-                className = " scale-125 w-full h-auto object-cover transition-opacity hover:scale-150 hover:brightness-50"
-                />
-            </a>
+const ProjectCard = ({project}) => (
+    <div className = "mb-24 flex flex-col md:flex-row items-center justify-between gap-12">
+        {/* Content Section */}
+        <div className = "space-y-6 w-full md:w-1/2">
+            <h2 className="font-['Inter'] text-2xl md:text-3xl tracking-tight uppercase font-light">
+            {project.title}
+             </h2>
+             <p className="font-['Inter'] text-gray-700 text-base leading-relaxed max-w-md">
+                {project.description}
+            </p>
 
-            {/* Content Section */}
-            <div className = "space-y-6 pt-4">
-                <h2 className = "font-['Inter'] text-2xl md:text-3xl tracking-tight uppercase font-light">
-                    {project.title}
-                </h2>
-                <p className = "font-['Inter'] text-gray-700 text-base leading-relaxed max-2-md">
-                    {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className = "flex flex-wrap gap-4">
-                    {project.technologies.map((tech,index) => (
-                        <span
-                        key = {index}
-                        className = "font-['Inter'] text-gray-700 font-bold text-base leading-relaxed max-2-md ">
-                            {tech}
-                        </span>
-                    ))}
-                </div>
-                {/* Role and Collaborators */}
-                <div className = "font-['Inter'] text-sm text-gray-600 space-y-1">
-                    <p> Role: {project.role} </p>
-                    {project.collaborators && (
-                        <p> Collaborators: {project.collaborators} </p>
-                    )}
-                </div>
+            {/* Technologies */}
+            <div className = "flex flex-wrap gap-4">
+                {project.technologies.map((tech, index) => (
+                    <span
+                    key = {index}
+                    className = "font-['Inter'] text-gray-700 font-bold text-base leading-relaxed max-w-md">
+                        {tech}
+                    </span>
+                ))}
+            </div>
+            {/* Role and Collaborators */}
+            <div className = "font-['Inter'] text-sm text-gray-600 space-y-1">
+                <p>Role: {project.role}</p>
+                {project.collaborators && <p>Collaborators: {project.collaborators}</p>}
             </div>
         </div>
+
+        {/* Project Image */}
     </div>
-); 
+)
 
 export default function Projects (){
     const projects = [
@@ -72,8 +61,8 @@ export default function Projects (){
     return(
         <section className = "py-20 px-8 bg-white">
             <div className = "max-w-7xl mx-auto">
-                <h1 className = "font-['Ballet'] text-6xl md:text-8xl mb-20 text-center tracking-wider italic text-red-800">
-                    A collection of Senses
+                <h1 className = "font-['Ballet'] text-8xl md:text-8xl mb-20 text-center tracking-widest italic text-red-800">
+                    Case Studies
                 </h1>
                 <div className = "space-y-32">
                     {projects.map((project,index) => (
