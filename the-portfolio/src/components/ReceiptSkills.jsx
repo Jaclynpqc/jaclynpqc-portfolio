@@ -1,14 +1,12 @@
+/* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
-import { Card, CardContent} from '@/components/ui/card';
 
 const Skills = () => {
     const [purchasedSkills, setPurchasedSkills] = useState([]);
 
     const skills = [
         {
-            category: 'HUMAN-COMPUTER INTERACTION RESEARCHER',
-            company: 'ALLEGHENY COLLEGE', 
-            period: '05/2024 - 09/2024',
+            category: 'The Designer',
             items: [
                 {name: 'TouchDesigner',
                 image: '/src/assets/touchdesigner.webp'
@@ -16,97 +14,18 @@ const Skills = () => {
                 {
                     name: 'Processing',
                     image: '/src/assets/processing.webp'
-                }
-            ]
-        },
-        {
-            category: 'WEB DEVELOPER INTERN',
-            company: 'BULLMOOSE MARKETING',
-            period: '05/2024 - Present',
-            items: [
-                {
-                    name: 'React',
-                    image: '/src/assets/react.svg'
-                },
-                {
-                    name: 'Tailwind',
-                    image: '/src/assets/tailwind.webp'
                 },
                 {
                     name: 'Figma',
-                    image: '/src/assets/figma.webp'
+                    image: '/src/assets/figma.svg'
                 },
-                {
-                    name: 'WordPress',
-                    image: ''
-                }
-            ]
-        },
-        {
-            category: 'SOFTWARE ENGINEER RESEARCHER',
-            company: 'ALLEGHENY COLLEGE',
-            period: '01/2024 - 08/2024',
-            items: [
-                {
-                    name: 'Python',
-                    image: ''
-                },
-                {
-                    name: 'Jupyter Notebook',
-                    image: ''
-                },
-                {
-                    name: 'scikit-learn',
-                    image: ''
-                },
-            ]
-        },
-        {
-            category: 'WEB APPLICATION INTERN',
-            company: 'FOODTRUCK ASSOCIATION OF CANADA',
-            period: '01/2024 - 05/2024',
-            items: [
-                {
-                    name: 'HTML5',
-                    image: '/src/assets/html5.webp'
-                },
-                {
-                    name: 'CSS',
-                    image: '/src/assets/css.webp'
-                },
-                {
-                    name: 'JavaScript',
-                    image: '/src/assets/javascript.webp'
-                },
-            ]
-        },
-        {
-            category: 'STUDENT DATA ANALYST',
-            company: 'ACUTEC PRECISION AEROSPACE',
-            period: '11/2023 - 12/2023',
-            items: [
-                {
-                    name: 'Data Visualization',
-                    image: ''
-                },
-                {
-                    name: 'SQL',
-                    image: '/src/assets/sql.webp'
-                }
-            ]
-        },
-        {
-            category: 'DIGITAL ART WORKSHOP FOUNDER',
-            company: 'Alleghney Lab for Innovation & Creativity',
-            period: '05/2023 - 05/2024',
-            items: [
                 {
                     name: 'Adobe Illustrator',
                     image: '/src/assets/adobeAI.png'
                 },
                 {
                     name: 'Adobe InDesign',
-                    image: ''
+                    image: '/src/assets/adobe-indesign.svg'
                 },
                 {
                     name: 'Adobe After Effects',
@@ -114,13 +33,174 @@ const Skills = () => {
                 },
                 {
                     name: 'Adobe Premiere Pro',
-                    image: ''
+                    image: '/src/assets/adobe-premiere-pro.svg'
                 },
                 {
                     name: 'Adobe Aero',
                     image: '/src/assets/adobeAero.png'
                 },
+                {
+                    name: 'Canva',
+                    image: '/src/assets/canva.svg'
+                },
+            ]
+        },
+        {
+            category: 'The Developer',
+            items: [
+                {
+                    name: 'HTML5',
+                    image: '/src/assets/html5.svg'
+                },
+                {
+                    name: 'CSS',
+                    image: '/src/assets/css.svg'
+                },
+                {
+                    name: 'JavaScript',
+                    image: '/src/assets/javascript.svg'
+                },
+                {
+                    name: 'React',
+                    image: '/src/assets/react.svg'
+                },
+                {
+                    name: 'Tailwind',
+                    image: '/src/assets/tailwind.svg'
+                },
+                {
+                    name: 'WordPress',
+                    image: '/src/assets/wordpress.svg'
+                }
+            ]
+        },
+        {
+            category: 'The Programmer',
+            items: [
+                {
+                    name: 'Python',
+                    image: '/src/assets/python.svg'
+                },
+                {
+                    name: 'C',
+                    image: '/src/assets/c.svg'
+                },
+                {
+                    name: 'Java',
+                    image: '/src/assets/java.svg'
+                },
+                {
+                    name: 'scikit-learn',
+                    image: '/src/assets/scikitlearn.webp'
+                },
+                {
+                    name: 'SQL',
+                    image: '/src/assets/sql.svg'
+                }
             ]
         }
-    ]
-}
+    ];
+
+    const handleSkillClick = (skillName) => {
+        if (!purchasedSkills.includes(skillName)){
+            setPurchasedSkills([...purchasedSkills, skillName]);
+        }
+    };
+    
+    return (
+        <div className="relative min-h-screen">
+          {/* Background Layer */}
+          <div className="absolute inset-0 bg-stone-50 opacity-90">
+            {/* Background Image */}
+            <div className="absolute inset-0 bg-[url('/path/to/your/background.jpg')] bg-cover bg-center mix-blend-multiply" />
+          </div>
+    
+          {/* Content Layer */}
+          <div className="relative z-10 container mx-auto px-4 py-10">
+            {/* Page Header */}
+            <div className="text-center mb-16">
+              <h1 className="text-8xl font-[Ballet] text-bordeaux mb-4 tracking-widest">The Skill Shop</h1>
+              <p className="text-lg font-[Inter] text-black/60">
+                Click on each skill icon to add it to your receipt
+              </p>
+            </div>
+    
+            {/* Main Content */}
+            <div className="flex flex-col lg:flex-row gap-12">
+              {/* Skills Section */}
+              <div className="flex-1">
+                {skills.map((category) => (
+                  <div key={category.category} className="mb-10">
+                    <div className="mb-6">
+                      <h2 className="text-2xl font-bold text-black mb-2">{category.category}</h2>
+                      <h3 className="text-xl text-black/80 mb-1">{category.company}</h3>
+                      <p className="text-black/60">{category.period}</p>
+                    </div>
+                    <div className="flex flex-wrap gap-6">
+                      {category.items.map((skill) => (
+                        <button
+                          key={skill.name}
+                          onClick={() => handleSkillClick(skill.name)}
+                          className="w-15 h-15 bg-white rounded-lg flex items-center justify-center hiver:bg-[#E8E8D0] transition-all duration-300 hover:scale-105 shadow-md"
+                        >
+                          <img 
+                            src={skill.image} 
+                            alt={skill.name} 
+                            className="w-12 h-12 object-contain"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+    
+              {/* Receipt Section */}
+              <div className="relative w-full lg:w-96">
+                {/* Receipt Texture Layer */}
+                <div className="absolute inset-0">
+                  {/* Add your paper texture image here */}
+                  <div className="absolute inset-0 bg-[url('/path/to/paper-texture.jpg')] bg-cover bg-center opacity-20" />
+                </div>
+    
+                {/* Receipt Content */}
+                <div className="relative bg-white/90 backdrop-blur-sm shadow-lg rounded-lg">
+                  <div className="p-8">
+                    <div className="font-['VT323'] text-gray-800">
+                      <h2 className="text-3xl font-bold mb-4 text-center">RECEIPT</h2>
+                      <p className="text-lg mb-6 text-center">
+                        Thank you for purchasing at Jaclyn Pham
+                      </p>
+                      <div className="border-t-2 border-b-2 border-gray-300 py-4">
+                        <div className="flex justify-between mb-4">
+                          <span className="text-xl">Item</span>
+                          <span className="text-xl">Quantity</span>
+                        </div>
+                        {purchasedSkills.length === 0 ? (
+                          <p className="text-center text-gray-500 py-4">
+                            Click on skills to add them to your receipt
+                          </p>
+                        ) : (
+                          purchasedSkills.map((skill) => (
+                            <div key={skill} className="flex justify-between text-lg">
+                              <span>{skill}</span>
+                              <span>1</span>
+                            </div>
+                          ))
+                        )}
+                      </div>
+                      <div className="mt-4 text-center text-sm">
+                        ********************************
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+};
+
+export default Skills;
+
