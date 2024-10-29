@@ -83,6 +83,86 @@ const INITIAL_ITEMS = [
         vx: 0, 
         vy: 0 // Velocity
     },
+    {
+        id: 8,
+        image:'/src/assets/red shoes/red1.svg',
+        x:20,
+        y:20,
+        vx: 0, 
+        vy: 0 // Velocity
+    },
+    {
+        id: 9,
+        image:'/src/assets/red shoes/red1a.svg',
+        x:20,
+        y:40,
+        vx: 0, 
+        vy: 0 // Velocity
+    },
+    {
+        id: 10,
+        image:'/src/assets/red shoes/red1ab.svg',
+        x:20,
+        y:50,
+        vx: 0, 
+        vy: 0 // Velocity
+    },
+    {
+        id: 11,
+        image:'/src/assets/red shoes/red2.svg',
+        x:20,
+        y:60,
+        vx: 0, 
+        vy: 0 // Velocity
+    },
+    {
+        id: 5,
+        image:'/src/assets/red shoes/red3.svg',
+        x:20,
+        y:70,
+        vx: 0, 
+        vy: 0 // Velocity
+    },
+    {
+        id: 12,
+        image:'/src/assets/red shoes/red4.svg',
+        x:20,
+        y:80,
+        vx: 0, 
+        vy: 0 // Velocity
+    },
+    {
+        id: 13,
+        image:'/src/assets/red shoes/red1a.svg',
+        x:20,
+        y:90,
+        vx: 0, 
+        vy: 0 // Velocity
+    },
+    {
+        id: 14,
+        image:'/src/assets/red shoes/red2a.svg',
+        x:30,
+        y:10,
+        vx: 0, 
+        vy: 0 // Velocity
+    },
+    {
+        id: 15,
+        image:'/src/assets/red shoes/red3a.svg',
+        x:30,
+        y:20,
+        vx: 0, 
+        vy: 0 // Velocity
+    },
+    {
+        id: 16,
+        image:'/src/assets/red shoes/red4a.svg',
+        x:30,
+        y:30,
+        vx: 0, 
+        vy: 0 // Velocity
+    },
 ];
 
 // Physics configuration constants
@@ -193,7 +273,7 @@ const Contact = () => {
     }, []); //Empty dependency array since we use refs for updating values
 
     return (
-        <div className="w-full bg-stone-50 p-5 flex items-center justify-center">
+        <div className="w-full bg-black flex items-center justify-center">
           <div 
             ref={containerRef}
             className="relative w-full max-w-8xl aspect-video border border-black rounded-lg p-8 overflow-hidden"
@@ -219,12 +299,12 @@ const Contact = () => {
             ))}
             { /* Content */}
             <div className = "absolute mb-0 left-0.5">
-                <p className = "text-6xl font-[Inter] text-black">LET`S CONNECT</p>
+                <p className = "text-6xl font-[Inter] text-white">LET`S CONNECT</p>
             </div>
             
             {/* Center button */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <button className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors duration-200">
+              <button className="bg-bordeaux text-white px-6 py-3 rounded-lg font-medium hover:bg-purpletulip transition-colors duration-200">
                 Send me a message 
               </button>
             </div>
