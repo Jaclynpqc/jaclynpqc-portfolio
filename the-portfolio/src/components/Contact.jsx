@@ -87,7 +87,7 @@ const INITIAL_ITEMS = [
 
 // Physics configuration constants
 const PHYSICS_CONFIG = {
-    PUSH_THRESHOLD : 10, // Distance at which push force starts affecting items
+    PUSH_THRESHOLD : 20, // Distance at which push force starts affecting items
     PUSH_MULTIPLIER: 1, // Strength of the push force
     FRICTION: 0.95, // Friction coefficient (1 = no friction, 0 = maximum friction)
     BOUNCE_DAMPENING: 0.5, // Reduce velocity when bouncing off walls
