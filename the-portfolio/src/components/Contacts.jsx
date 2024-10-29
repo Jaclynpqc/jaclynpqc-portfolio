@@ -1,18 +1,14 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-constant-condition */
 import React, { useState, useEffect, useRef } from 'react';
 
 //Initial items config with image links
 const IMAGE_PATHS = [
-    '/src/assets/contact/CTA.svg',
-    '/src/assets/contact/github.svg',
-    '/src/assets/contact/linkedin.svg',
     '/src/assets/contact/icon (2).svg',
     '/src/assets/contact/icon (3).svg',
     '/src/assets/contact/icon (4).svg',
     '/src/assets/contact/icon (5).svg',
     '/src/assets/contact/icon (6).svg',
-    '/src/assets/contact/icon (7).svg',
-    '/src/assets/contact/icon.svg',
-    
 ];
 
 // Physics configuration constants
@@ -21,7 +17,7 @@ const PHYSICS_CONFIG = {
   PUSH_MULTIPLIER: 2,
   FRICTION: 0.95,
   BOUNCE_DAMPENING: 0.5,
-  BOUNDARY_PADDING: 5,
+  BOUNDARY_PADDING: 2,
   VELOCITY_SCALE: 60
 };
 
@@ -81,7 +77,7 @@ const generateItems = (count, padding = 10) => {
 
 const Contact = () => {
   // Initialize with randomly generated items
-  const [items, setItems] = useState(() => generateItems(8));
+  const [items, setItems] = useState(() => generateItems(30));
   
   const containerRef = useRef(null);
   const animationFrameRef = useRef();
@@ -174,15 +170,15 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="w-full  bg-black flex items-center justify-center">
+    <div className="w-full bg-black flex items-center justify-center">
       <div 
         ref={containerRef}
-        className="relative w-full max-w-4xl aspect-video border border-white rounded-lg overflow-hidden"
+        className="relative w-full max-w-8xl aspect-video border border-white rounded-lg overflow-hidden"
       >
         {items.map(item => (
           <div
             key={item.id}
-            className="absolute transform w-12 h-12 cursor-pointer"
+            className="absolute transform w-24 h-24 cursor-pointer"
             style={{
               left: `${item.x}%`,
               top: `${item.y}%`,
@@ -193,7 +189,7 @@ const Contact = () => {
             <img 
               src={item.image} 
               alt={`Interactive item ${item.id}`}
-              className="w-full h-full object-contain filter scale-150"
+              className="object-contain filter"
             />
           </div>
         ))}
