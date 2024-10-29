@@ -299,14 +299,12 @@ const Contact = () => {
             ))}
             { /* Content */}
             <div className = "absolute mb-0 left-0.5">
-                <p className = "text-6xl font-[Inter] text-white">LET`S CONNECT</p>
+                <p className = "text-8xl font-[Inter] text-white font-bold">LET&apos;S CONNECT</p>
             </div>
             
-            {/* Center button */}
+            {/* Contact */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <button className="bg-bordeaux text-white px-6 py-3 rounded-lg font-medium hover:bg-purpletulip transition-colors duration-200">
-                Send me a message 
-              </button>
+              <p className = "text-4xl font-[Ballet] text-white font-italic">jaclynpqc@gmail.com</p>
             </div>
           </div>
         </div>
