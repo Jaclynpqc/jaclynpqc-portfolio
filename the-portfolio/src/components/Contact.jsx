@@ -217,6 +217,10 @@ const Contact = () => {
                 />
               </div>
             ))}
+            { /* Content */}
+            <div className = "absolute mb-0 left-0.5">
+                <p className = "text-6xl font-[Inter] text-black">LET`S CONNECT</p>
+            </div>
             
             {/* Center button */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
