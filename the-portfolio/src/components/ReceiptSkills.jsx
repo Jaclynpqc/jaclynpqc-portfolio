@@ -145,7 +145,7 @@ const Skills = () => {
                         <button
                           key={skill.name}
                           onClick={() => handleSkillClick(skill.name)}
-                          className="w-20 h-20 bg-white rounded-lg flex items-center justify-center hiver:bg-[#E8E8D0] transition-all duration-300 hover:scale-105 shadow-md"
+                          className="w-20 h-20 bg-white rounded-lg flex items-center justify-center hover:bg-[#E8E8D0] transition-all duration-300 hover:scale-105 shadow-md"
                         >
                           <img 
                             src={skill.image} 

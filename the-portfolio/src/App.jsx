@@ -7,6 +7,7 @@ import NavigationBar from './components/NavBar';
 import HeroSection from './components/HeroSection';
 import Projects from './components/Projects';
 import Skills from './components/ReceiptSkills';
+import Contact from './components/Contact';
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <HeroSection />
       <Skills />
       <Projects />
+      <Contact />
     </div>
   )
 }
