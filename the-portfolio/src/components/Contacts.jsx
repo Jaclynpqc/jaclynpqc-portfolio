@@ -2,16 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 
 //Initial items config with image links
 const IMAGE_PATHS = [
-    '/src/assets/winebucket/22.svg',
-    '/src/assets/winebucket/3.svg',
-    '/src/assets/winebucket/4.svg',
-    '/src/assets/winebucket/8.svg',
-    '/src/assets/winebucket/9.svg',
-    '/src/assets/winebucket/10.svg',
-    '/src/assets/winebucket/11.svg',
-    '/src/assets/winebucket/12.svg',
-    '/src/assets/winebucket/13.svg',
-    '/src/assets/winebucket/14.svg',
+    '/src/assets/contact/CTA.svg',
+    '/src/assets/contact/github.svg',
+    '/src/assets/contact/linkedin.svg',
+    '/src/assets/contact/icon (2).svg',
+    '/src/assets/contact/icon (3).svg',
+    '/src/assets/contact/icon (4).svg',
+    '/src/assets/contact/icon (5).svg',
+    '/src/assets/contact/icon (6).svg',
+    '/src/assets/contact/icon (7).svg',
+    '/src/assets/contact/icon.svg',
     
 ];
 
