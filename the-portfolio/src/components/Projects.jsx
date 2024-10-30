@@ -1,135 +1,166 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React from 'react';
 
-const ProjectCard = ( {project}) => (
-    <div className = "mb-12">
-        <div className = "grid grid-cols-1 md:grid-cols-2 gap-3 items-start transition-all duration-300 ease-in-out px-2 py-2 hover:bg-bordeaux hover:rounded-xl group">
-            {/* Project Image Container */}
-            <a href={project.link} 
-               className={`block aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 relative
-                         ${project.imageRight ? 'md:order-last' : ''}`}>
-                {/* Default Image */}
-                <img 
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover object-center absolute inset-0
-                             transition-opacity duration-300 ease-in-out
-                             group-hover:opacity-0"
-                />
-                {/* Hover Image */}
-                <img 
-                    src={project.hoverImage}
-                    alt={`${project.title} - alternate view`}
-                    className="w-full h-full object-cover object-center absolute inset-0
-                             transition-opacity duration-300 ease-in-out
-                             opacity-0 group-hover:opacity-100"
-                />
-            </a>
-
-            {/* Content Section */}
-            <div className = "space-y-4 pt-2">
-                <h2 className = "font-['Inter'] text-2xl md:text-3xl tracking-tight uppercase font-light  group-hover:text-white">
-                    {project.title}
-                </h2>
-                <p className = "font-['Inter'] text-gray-700 text-base leading-relaxed max-2-md group-hover:text-white">
-                    {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className = "flex flex-wrap gap-2">
-                    {project.technologies.map((tech,index) => (
-                        <span
-                        key = {index}
-                        className = "font-['Inter'] text-gray-700 font-bold text-base leading-relaxed max-2-md group-hover:text-white ">
-                            {tech}
-                        </span>
-                    ))}
-                </div>
-                {/* Role and Collaborators */}
-                <div className = "font-['Inter'] text-sm text-gray-600 space-y-1 group-hover:text-white">
-                    <p> Role: {project.role} </p>
-                    {project.collaborators && (
-                        <p> Collaborators: {project.collaborators} </p>
-                    )}
-                </div>
-            </div>
+const ProjectCard = ({ project, index, isLast }) => (
+  <div className="relative">
+    <div className="mb-24">
+      {/* Case Study Header */}
+      <div className="mb-4">
+        <div className="text-gray-500 font-['Public Sans'] text-lg">
+          case study
+          <div className="font-['Public Sans'] font-bold">N°{String(index + 1).padStart(2, '0')}</div>
         </div>
-    </div>
-); 
+        
+        <div className="mt-6">
+        <h2 className={`font-['Public Sans'] uppercase text-7xl mb-2 font-black tracking-wide ${project.customStyle?.brand || 'text-bordeaux'}`}>
+            {project.brand}
+          </h2>
+          <h2 className="font-['Public Sans'] mb-5 text-gray-500 font-extralight tracking-wide">{project.brandDes}</h2>
+          <h1 className={`font-['Public Sans'] text-4xl mb-6 font-bold tracking-tight ${project.customStyle?.title || ''}`}>
+            {project.title}
+          </h1>
+          
+          <p className="font-['Public Sans'] text-lg max-w-3xl mb-6 font-light leading-relaxed">
+            {project.description}
+          </p>
 
-export default function Projects (){
-    const projects = [
-        {
-            title: "MUJI PAINTING EXPERIENCES",
-            description: "An interactive installation for Muji's new pen collection that reflects on the evolution of communication. Users type on a restored typewriter, an each key creates a flowing pen stroke on a digital canvas ",
-            technologies: ["TouchDesigner", "p5.js"],
-            role: "Interaction Engineer",
-            collaborators: "Alish Chhetri (hardware engineer), Emily Graber(project supervisor)",
-            image: "/src/assets/typewriter.svg", 
-            hoverImage: "/src/assets/typewriter.svg", 
-            link: "/projects/muji-project",
-            imageRight: false
-        },
-        {
-            title: "MARSHALL BRINGS MUSIC TO LIFE",
-            description: "An interactive touch-sensitive painting that visualize music and lets users engage with sound in a tactile way.",
-            technologies: ["Arduino Auditions","Arduino IDE", "Adobe Aero"],
-            role: "Designer & Engineer",
-            collaborators: "Heather Brand (project supervisor)", 
-            image: "/src/assets/headphones.svg",
-            hoverImage: "/src/assets/typewriter.svg", 
-            link: "/projects/marshall-project",
-            imageRight: true
-        }, 
-        {
-            title: "All Day Coffee: Waiting for your coffee can be fun",
-            description: "All Day is known for creating inviting spaces and enhancing the cafe experience. The Bakery Qua",
-            technologies: ["Adobe Premiere Pro", "HeadvyM"],
-            role: "Interaction Engineer",
-            collaborators: "Independent project in ART388: Current Topics in Art/Science", 
-            image: "/src/assets/projects/Biophilians.gif",
-            hoverImage: "/src/assets/typewriter.svg", 
-            link: "/projects/edenia-project",
-            imageRight: false
-        }, 
-        {
-            title: "Ednia: Embracing a Positive Technological Future",
-            description: "Inspired by TeamLab, this installation is my take on reimagining the relationship between humans, nature, and technology.",
-            technologies: ["Adobe Premiere Pro", "HeadvyM"],
-            role: "Designer",
-            collaborators: "Independent project in ART388: Current Topics in Art/Science", 
-            image: "/src/assets/projects/Biophilians.gif",
-            hoverImage: "/src/assets/typewriter.svg", 
-            link: "/projects/edenia-project",
-            imageRight: true
-        }, 
-        {
-            title: "Le Voyage Dans la Lune: Immersive Experience",
-            description: "Stepping into the scene of the classic movie 'Le Voyage dans la Lune'  by Georges Méliès, this project transports viewers to a captivating journey of walking amongst the stars. ",
-            technologies: ["Procreate", "Adobe Aero"],
-            role: "AR Designer",
-            collaborators: "", 
-            image: "/src/assets/projects/aero_recording 2.gif",
-            hoverImage: "/src/assets/typewriter.svg", 
-            link: "/projects/moon-project",
-            imageRight: false
-        }, 
-
-    ];
-
-    return(
-        <section className = "py-4 px- bg-stone-50">
-            <div className = "max-w-6xl mx-auto">
-                <h1 className = "font-['Ballet'] text-6xl md:text-8xl mt-5 mb-12 text-center tracking-wider italic text-red-800">
-                    A collection of Senses
-                </h1>
-                <div className = "space-y-12">
-                    {projects.map((project,index) => (
-                        <ProjectCard key = {index} project = {project} />
-                    ))}
-                </div>
+          <div className="space-y-2">
+            <p className = "font-['Public Sans'] text-lg text-gray-400 font-bold">{project.role}</p>
+            <div className="font-['Public Sans'] text-lg text-bordeaux font-light">
+              {project.technologies.join(' • ')}
             </div>
-        </section>
-    );
+            
+            {project.collaborators && (
+              <div className="font-['Public Sans'] text-sm text-gray-600 font-light">
+                Collaborator: {project.collaborators}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Project Image Container with Hover Effect */}
+      <a 
+        href={project.link}
+        className="block w-full aspect-video mt-8 bg-gray-100 rounded-lg overflow-hidden relative group"
+      >
+        {/* Default Image */}
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover absolute inset-0 transition-opacity duration-500 ease-in-out group-hover:opacity-0"
+        />
+        {/* Hover Image/Video */}
+        {project.hoverMedia?.type === 'video' ? (
+          <video
+            src={project.hoverMedia.src}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100"
+          />
+        ) : (
+          <img
+            src={project.hoverImage || project.image}
+            alt={`${project.title} - alternate view`}
+            className="w-full h-full object-cover absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100"
+          />
+        )}
+      </a>
+    </div>
+
+    {/* Red Divider Line - only show if not the last item */}
+    {!isLast && (
+      <div className="absolute bottom-0 left-0 w-full h-px bg-bordeaux" />
+    )}
+  </div>
+);
+
+export default function Projects() {
+  const projects = [
+    {
+      brand: "MUJI",
+      brandDes: "minimalist lifestyle brand",
+      title: "MERGING TRADITIONAL AND MODERN COMMUNICATION",
+      description: "An interactive installation for Muji's new pen collection that reflects on the evolution of communication. Users type on a restored typewriter, and each keystroke creates a flowing pen stroke on a digital canvas.",
+      technologies: ["touchDesigner", "p5.js"],
+      role: "interaction designer",
+      collaborators: "Alish Chhetri (hardware engineer), Emily Graber (project supervisor)",
+      image: "/src/assets/typewriter.svg",
+      hoverImage: "/src/assets/typewriter-hover.svg",
+      link: "/projects/muji-project",
+      customStyle: {
+        brand: "text-bordeaux",
+        title: "text-black"
+      }
+    },
+    {
+      brand: "MARSHALL",
+      brandDes: "sound technology",
+      title: "BRINGING MUSIC TO LIFE",
+      description: "An interactive touch-sensitive painting that visualizes music and lets users engage with sound in a tactile way.",
+      technologies: ["Arduino Auditions", "Arduino IDE", "Adobe Aero"],
+      role: "Designer & Engineer",
+      collaborators: "Heather Brand (project supervisor)",
+      image: "/src/assets/headphones.svg",
+      hoverImage: "/src/assets/headphones-hover.svg",
+      link: "/projects/marshall-project",
+      customStyle: {
+        brand: "text-black",
+        title: "text-bordeaux"
+      }
+    },
+    {
+        brand: "My Heritage",
+        brandDes: "family website",
+        title: "THE CENTRAL RESOURCE FOR ALL GENERATIONS",
+        description: "(Ongoing) A family archive for all generations of the McCarthy Family, integrating GoogleAPI for face recognition and photo retrieval.",
+        technologies: ["Figma", "React", "TailwindCCSS", "NextJS"],
+        role: "UI Designer, Front-end Web Developer",
+        collaborators: "Trang Hoang (Back-end web developer), Bullmoose Marketing",
+        image: "/src/assets/headphones.svg",
+        hoverImage: "/src/assets/headphones-hover.svg",
+        link: "/projects/marshall-project",
+        customStyle: {
+            brand: "text-furioustiger",
+            title: "text-black"
+          }
+      },
+      {
+        brand: "Liberty Electronics",
+        brandDes: "company website",
+        title: "MODERNIZE COMPANY WEBSITE",
+        description: "(Ongoing) Liberty Electronics provides electrical cable assemblies, wire haresses for demanding defense and commercial OEM. They want to modernize the company website and convert it into a bold, dynamic and professional user interface. ",
+        technologies: ["Figma", "WordPress", "HTML", "CSS", "PHP"],
+        role: "UI Designer, Front-end Web Developer",
+        collaborators: "Bullmoose Marketing",
+        image: "/src/assets/headphones.svg",
+        hoverImage: "/src/assets/headphones-hover.svg",
+        link: "/projects/marshall-project",
+        customStyle: {
+            brand: "text-[#0077C0]",
+            title: "text-[#1b1b1b]"
+          }
+      }
+    
+  ];
+
+  return (
+    <section className="py-16 px-6 bg-gray-50">
+      <div className="max-w-8xl mx-auto">
+        <div className="space-y-24">
+          {projects.map((project, index) => (
+            <ProjectCard 
+              key={index} 
+              project={project} 
+              index={index}
+              isLast={index === projects.length - 1}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
