@@ -7,12 +7,23 @@ const ProjectCard = ( {project}) => (
         <div className = "grid grid-cols-1 md:grid-cols-2 gap-3 items-start transition-all duration-300 ease-in-out px-2 py-2 hover:bg-bordeaux hover:rounded-xl group">
             {/* Project Image Container */}
             <a href={project.link} 
-               className={`block aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 
+               className={`block aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 relative
                          ${project.imageRight ? 'md:order-last' : ''}`}>
+                {/* Default Image */}
                 <img 
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-center absolute inset-0
+                             transition-opacity duration-300 ease-in-out
+                             group-hover:opacity-0"
+                />
+                {/* Hover Image */}
+                <img 
+                    src={project.hoverImage}
+                    alt={`${project.title} - alternate view`}
+                    className="w-full h-full object-cover object-center absolute inset-0
+                             transition-opacity duration-300 ease-in-out
+                             opacity-0 group-hover:opacity-100"
                 />
             </a>
 
@@ -56,6 +67,7 @@ export default function Projects (){
             role: "Interaction Engineer",
             collaborators: "Alish Chhetri (hardware engineer), Emily Graber(project supervisor)",
             image: "/src/assets/typewriter.svg", 
+            hoverImage: "/src/assets/typewriter.svg", 
             link: "/projects/muji-project",
             imageRight: false
         },
@@ -66,6 +78,7 @@ export default function Projects (){
             role: "Designer & Engineer",
             collaborators: "Heather Brand (project supervisor)", 
             image: "/src/assets/headphones.svg",
+            hoverImage: "/src/assets/typewriter.svg", 
             link: "/projects/marshall-project",
             imageRight: true
         }, 
@@ -76,6 +89,7 @@ export default function Projects (){
             role: "Interaction Engineer",
             collaborators: "Independent project in ART388: Current Topics in Art/Science", 
             image: "/src/assets/projects/Biophilians.gif",
+            hoverImage: "/src/assets/typewriter.svg", 
             link: "/projects/edenia-project",
             imageRight: false
         }, 
@@ -86,6 +100,7 @@ export default function Projects (){
             role: "Designer",
             collaborators: "Independent project in ART388: Current Topics in Art/Science", 
             image: "/src/assets/projects/Biophilians.gif",
+            hoverImage: "/src/assets/typewriter.svg", 
             link: "/projects/edenia-project",
             imageRight: true
         }, 
@@ -96,6 +111,7 @@ export default function Projects (){
             role: "AR Designer",
             collaborators: "", 
             image: "/src/assets/projects/aero_recording 2.gif",
+            hoverImage: "/src/assets/typewriter.svg", 
             link: "/projects/moon-project",
             imageRight: false
         }, 
@@ -103,9 +119,9 @@ export default function Projects (){
     ];
 
     return(
-        <section className = "py-4 px-4 bg-white">
+        <section className = "py-4 px- bg-stone-50">
             <div className = "max-w-6xl mx-auto">
-                <h1 className = "font-['Ballet'] text-6xl md:text-8xl mb-12 text-center tracking-wider italic text-red-800">
+                <h1 className = "font-['Ballet'] text-6xl md:text-8xl mt-5 mb-12 text-center tracking-wider italic text-red-800">
                     A collection of Senses
                 </h1>
                 <div className = "space-y-12">
