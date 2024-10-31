@@ -116,7 +116,7 @@ const Skills = () => {
           {/* Background Layer */}
           <div className="absolute max-w-8xl inset-0 bg-stone-50 opacity-90">
             {/* Background Image */}
-            <div className="absolute inset-0 bg-[url('/path/to/your/background.jpg')] bg-cover bg-center mix-blend-multiply" />
+            <div className="absolute inset-0 bg-[url('')] bg-cover bg-center mix-blend-multiply" />
           </div>
     
           {/* Content Layer */}
@@ -164,7 +164,7 @@ const Skills = () => {
                 {/* Receipt Texture Layer */}
                 <div className="absolute inset-0">
                   {/* Add paper texture*/}
-                  <div className="absolute inset-0 bg-[url('/path/to/paper-texture.jpg')] bg-cover bg-center opacity-20" />
+                  <div className="absolute inset-0 bg-[url('')] bg-cover bg-center opacity-20" />
                 </div>
     
                 {/* Receipt Content */}
