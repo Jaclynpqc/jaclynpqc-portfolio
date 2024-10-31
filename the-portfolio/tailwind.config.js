@@ -17,6 +17,12 @@ export const theme = {
       furioustiger: '#EA5814',
       purpletulip: '#40002B',
       alpineberryyellow: '#f7e0ba',
+      bloodbrother: '#7a0014',
+      marilynmonroe: '#cc001e',
+      darkmaroon: '#390007',
+      shiningknight: '#9ba0ab',
+      mauimist: '#f0f4f5',
+      darkvoid: '#0e0e0f'
     },
     screens: {
       'xs': "450px",

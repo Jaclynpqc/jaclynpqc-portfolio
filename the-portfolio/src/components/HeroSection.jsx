@@ -70,8 +70,8 @@ const DragPrompt = () => {
 
   return (
     <div className="fixed top-10 mt-10 left-1/2 transform -translate-x-1/2 z-50 transition-opacity duration-500">
-      <div className="bg-white/90 border-bloodymary rounded-md shadow-lg">
-        <p className="text-lg font-[Public Sans] text-furioustiger">
+      <div className="bg-bloodbrother border-bloodymary rounded-md shadow-lg">
+        <p className="text-lg font-[Public Sans] text-mauimist">
           Try dragging the elements around! ✨
         </p>
       </div>
@@ -94,7 +94,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <div className="h-[80vh] relative bg-stone-50 flex items-center justify-center overflow-hidden">
+      <div className="h-[80vh] relative bg-mauimist flex items-center justify-center overflow-hidden">
         <DragPrompt />
         <div className="max-w-6xl mx-auto text-center relative -mb-10">
           {/* Flatlay Elements */}
@@ -108,9 +108,9 @@ const HeroSection = () => {
           ))}
           {/* Main text */}
           <p className="text-3xl md:text-4xl lg:text-5xl leading-relaxed md:leading-relaxed lg:leading-relaxed relative">
-            <span className="font-['Inter'] font-black text-black tracking-wide">Hello world! I&apos;m Jaclyn!</span>{' '}
+            <span className="font-['Inter'] font-black text-darkvoid tracking-wide">Hello world! I&apos;m Jaclyn!</span>{' '}
             <br/>
-            <span className="font-['Inter'] font-light text-black"> I am a product designer (UI/UX) & creative technologist based in United States, working worldwide. I enjoy creating meaningful narratives through experimenting with new technology. </span>{' '}
+            <span className="font-['Inter'] font-light text-darkvoid"> I am a product designer (UI/UX) & creative technologist based in United States, working worldwide. I enjoy creating meaningful narratives through experimenting with new technology. </span>{' '}
             <br/>
             <span className="font-['Inter'] font-extralight text-2xl md:text-3xl lg:text-4xl text-bloodymary">Contact me at jaclynpqc@gmail.com</span>{' '}
           </p>
@@ -118,19 +118,19 @@ const HeroSection = () => {
       </div>
 
       {/* Introduction Section */}
-      <div className="bg-black px-2 py-8 -mt-10 flex overflow-hidden">
+      <div className="bg-darkvoid px-2 py-8 -mt-10 flex overflow-hidden">
         <div className="max-w-8xl mx-auto p-6 rounded-lg transition-colors duration-300 cursor-pointer">
           <div className="flex gap-8 items-start">
             {/* Text content */}
             <div className="flex-1">
-              <h2 className="text-2xl font-['Public Sans'] text-gray-500 font-medium mb-4 ">
+              <h2 className="text-2xl font-['Public Sans'] text-shiningknight font-medium mb-4 ">
                 About Me
               </h2>
-              <p className="max-w-7xl text-white text-2xl md:text-3xl lg:text-4xl font-['Inter'] font-light leading-relaxed ">
+              <p className="max-w-7xl text-mauimist text-2xl md:text-3xl lg:text-4xl font-['Inter'] font-light leading-relaxed ">
                 BS in Software Engineering and BA in Art, Science, and Innovation at Allegheny College. With a background in marketing, I thrive on creating engaging brand activation campaigns and pop-up events that drive customer engagement.
               </p>
               <br/>
-              <p className="max-w-7xl text-white text-2xl md:text-3xl lg:text-4xl font-['Inter'] font-light leading-relaxed ">
+              <p className="max-w-7xl text-shiningknight text-2xl md:text-3xl lg:text-4xl font-['Inter'] font-light leading-relaxed ">
                 I&apos;m also an avid traveler and speak Vietnamese, English, and French. When I&apos;m not studying, you can find me designing websites, creating merchandise, teaching workshops, or launching a tech club!
               </p>
             </div>
@@ -141,10 +141,10 @@ const HeroSection = () => {
                 href="/path-to-your-resume.pdf" 
                 target="_blank"
                 rel="noopener noreferrer" 
-                className="flex-shrink-0 w-60 h-60 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-105 group/button"
+                className="flex-shrink-0 w-60 h-60 rounded-full bg-darkmaroon shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-105 group/button"
               >
-                <span className="text-2xl font-['Public Sans'] text-black text-center group-hover/button:scale-110 transition-transform duration-300">
-                  View<br/>My Resume
+                <span className="text-3xl font-['Public Sans'] font-black  text-mauimist text-center group-hover/button:scale-110 transition-transform duration-300">
+                  VIEW<br/>MY CV
                 </span>
               </a>
             </div>

@@ -170,10 +170,10 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black flex items-center justify-center">
+    <div className="w-full h-[400px] bg-black flex items-center justify-center"> 
       <div 
         ref={containerRef}
-        className="relative w-full max-w-8xl aspect-video border border-white rounded-lg overflow-hidden"
+        className="relative w-full h-[400px] max-w-8xl aspect-video border border-white rounded-lg overflow-hidden" 
       >
         {items.map(item => (
           <div
@@ -195,17 +195,18 @@ const Contact = () => {
         ))}
         
         { /* Content */}
-            <div className = "absolute mb-0 left-0.5">
-                <p className = "text-8xl font-[Inter] text-white font-bold">LET&apos;S CONNECT</p>
-            </div>
-            
-            {/* Contact */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <p className = "text-4xl font-[Inter] text-white font-italic">jaclynpqc@gmail.com</p>
-            </div>
+        <div className="absolute top-8 left-8">
+          <p className="text-6xl font-[Inter] text-white font-bold">LET&apos;S CONNECT</p>
+        </div>
+        
+        {/* Contact */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <p className="text-2xl font-[Inter] text-white font-italic">jaclynpqc@gmail.com</p>
+        </div>
       </div>
     </div>
   );
+  
 };
 
 export default Contact;
