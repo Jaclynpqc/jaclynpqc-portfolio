@@ -3,15 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jaclynpqc.github.io/the-portfolio"
-,
+  "homepage": "https://jaclynpqc.github.io/the-portfolio/the-portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -g main build"
   },
   "dependencies": {
     "lucide-react": "^0.453.0",
