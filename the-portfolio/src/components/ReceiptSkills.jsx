@@ -9,39 +9,39 @@ const Skills = () => {
             category: 'THE DESIGNER',
             items: [
                 {name: 'TouchDesigner',
-                image: '/src/assets/touchdesigner.webp'
+                image: '/touchdesigner.webp'
                 },
                 {
                     name: 'Processing',
-                    image: '/src/assets/processing.webp'
+                    image: '/processing.webp'
                 },
                 {
                     name: 'Figma',
-                    image: '/src/assets/figma.svg'
+                    image: '/figma.svg'
                 },
                 {
                     name: 'Adobe Illustrator',
-                    image: '/src/assets/adobeAI.png'
+                    image: '/adobeAI.png'
                 },
                 {
                     name: 'Adobe InDesign',
-                    image: '/src/assets/adobe-indesign.svg'
+                    image: '/adobe-indesign.svg'
                 },
                 {
                     name: 'Adobe After Effects',
-                    image: '/src/assets/adobeAfterEffects.png'
+                    image: '/adobeAfterEffects.png'
                 },
                 {
                     name: 'Adobe Premiere Pro',
-                    image: '/src/assets/adobe-premiere-pro.svg'
+                    image: '/adobe-premiere-pro.svg'
                 },
                 {
                     name: 'Adobe Aero',
-                    image: '/src/assets/adobeAero.png'
+                    image: '/adobeAero.png'
                 },
                 {
                     name: 'Canva',
-                    image: '/src/assets/canva.svg'
+                    image: '/canva.svg'
                 },
             ]
         },
@@ -50,27 +50,27 @@ const Skills = () => {
             items: [
                 {
                     name: 'HTML5',
-                    image: '/src/assets/html5.svg'
+                    image: '/html5.svg'
                 },
                 {
                     name: 'CSS',
-                    image: '/src/assets/css.svg'
+                    image: '/css.svg'
                 },
                 {
                     name: 'JavaScript',
-                    image: '/src/assets/javascript.svg'
+                    image: '/javascript.svg'
                 },
                 {
                     name: 'React',
-                    image: '/src/assets/react.svg'
+                    image: '/react.svg'
                 },
                 {
                     name: 'Tailwind',
-                    image: '/src/assets/tailwind.svg'
+                    image: '/tailwind.svg'
                 },
                 {
                     name: 'WordPress',
-                    image: '/src/assets/wordpress.svg'
+                    image: '/wordpress.svg'
                 }
             ]
         },
@@ -79,23 +79,23 @@ const Skills = () => {
             items: [
                 {
                     name: 'Python',
-                    image: '/src/assets/python.svg'
+                    image: '/python.svg'
                 },
                 {
                     name: 'C',
-                    image: '/src/assets/c.svg'
+                    image: '/c.svg'
                 },
                 {
                     name: 'Java',
-                    image: '/src/assets/java.svg'
+                    image: '/java.svg'
                 },
                 {
                     name: 'scikit-learn',
-                    image: '/src/assets/scikitlearn.webp'
+                    image: '/scikitlearn.webp'
                 },
                 {
                     name: 'SQL',
-                    image: '/src/assets/sql.svg'
+                    image: '/sql.svg'
                 }
             ]
         }
@@ -123,7 +123,7 @@ const Skills = () => {
           <div className="relative z-10 container mx-auto px-4 py-10">
             {/* Page Header */}
             <div className="text-center mb-16">
-              <h1 className="text-8xl font-[Ballet] text-bordeaux mb-4 tracking-widest">The Skill Shop</h1>
+              <h1 className="text-8xl font-[Playfair] text-bordeaux mb-4 tracking-widest">The Skill Shop</h1>
               <p className="text-lg font-[Inter] font-bold text-black/60">
                 What are you looking for in me? Click to add skills to your receipt!
               </p>

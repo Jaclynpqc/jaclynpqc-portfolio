@@ -17,7 +17,6 @@ export const theme = {
       furioustiger: '#EA5814',
       purpletulip: '#40002B',
       alpineberryyellow: '#f7e0ba',
-      stone: '#e4e2dd',
     },
     screens: {
       'xs': "450px",
