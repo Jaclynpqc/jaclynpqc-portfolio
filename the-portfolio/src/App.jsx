@@ -5,7 +5,7 @@ import NavigationBar from './components/NavBar';
 import HeroSection from './components/HeroSection';
 import Projects from './components/Projects';
 import Skills from './components/ReceiptSkills';
-import Contact from './components/Contacts';
+import Footer from './components/Footer';
 
 
 
@@ -24,7 +24,7 @@ function App() {
           <Skills />
         </section>
         <section id="contact" className="scroll-mt-20">
-          <Contact />
+          <Footer />
         </section>
       </main>
     </div>
