@@ -4,11 +4,11 @@ import React, { useState, useEffect, useRef } from 'react';
 
 //Initial items config with image links
 const IMAGE_PATHS = [
-    '/src/assets/contact/icon (2).svg',
-    '/src/assets/contact/icon (3).svg',
-    '/src/assets/contact/icon (4).svg',
-    '/src/assets/contact/icon (5).svg',
-    '/src/assets/contact/icon (6).svg',
+    '/contact/icon (2).svg',
+    '/contact/icon (3).svg',
+    '/contact/icon (4).svg',
+    '/contact/icon (5).svg',
+    '/contact/icon (6).svg',
 ];
 
 // Physics configuration constants
