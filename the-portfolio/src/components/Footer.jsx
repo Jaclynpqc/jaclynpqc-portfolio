@@ -1,3 +1,6 @@
+/* eslint-disable no-constant-condition */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Github, Linkedin, BookOpen, Instagram } from 'lucide-react';
 
@@ -167,10 +170,10 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="w-full bg-black">
+    <footer className="w-full bg-darkvoid">
       <div 
         ref={containerRef}
-        className="relative w-full h-[400px] max-w-8xl mx-auto border border-white rounded-lg overflow-hidden"
+        className="relative w-full h-[300px] max-w-8xl mx-auto border border-white rounded-lg overflow-hidden"
       >
         {/* Interactive background items */}
         {items.map(item => (
