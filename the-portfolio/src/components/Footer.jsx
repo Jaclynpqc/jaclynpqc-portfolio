@@ -5,11 +5,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Github, Linkedin, BookOpen, Instagram } from 'lucide-react';
 
 const IMAGE_PATHS = [
-    '/contact/icon (2).svg',
-    '/contact/icon (3).svg',
-    '/contact/icon (4).svg',
-    '/contact/icon (5).svg',
-    '/contact/icon (6).svg',
+    '/src/assets/contact/icon (2).svg',
+    '/src/assets/contact/icon (3).svg',
+    '/src/assets/contact/icon (4).svg',
+    '/src/assets/contact/icon (5).svg',
+    '/src/assets/contact/icon (6).svg',
 ];
 
 // Physics configuration constants remain the same
