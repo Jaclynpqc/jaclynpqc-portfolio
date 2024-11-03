@@ -66,7 +66,7 @@ const ProjectCard = ({ project, index }) => {
         <div className="lg:col-span-7 order-2">
           <a 
             href={project.link}
-            className="block relative aspect-[4/3] overflow-hidden rounded-lg group"
+            className="block relative aspect-[4/3] overflow-hidden  group"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-darkvoid/10 z-10" />
             <img
