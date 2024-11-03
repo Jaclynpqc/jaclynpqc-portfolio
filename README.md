@@ -16,9 +16,6 @@ updated on: 03th November 2024, Sunday
 - [Introduction](#introduction)
 - [Development](#development)
 - [Tech Stack Used](#tech-stack-used)
-- [Preview](#preview)
-- [Best Contributors](#best-contributors)
-- [License](#license)
 
 ## Introduction
 
