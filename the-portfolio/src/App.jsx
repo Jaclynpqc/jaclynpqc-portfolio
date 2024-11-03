@@ -1,17 +1,18 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import {useState, useEffect, useRef} from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavigationBar from './components/NavBar';
 import HeroSection from './components/HeroSection';
 import Projects from './components/Projects';
 import Skills from './components/ReceiptSkills';
 import Footer from './components/Footer';
+import NotFound from './components/404';
 
-
-
-function App() {
+//Main content
+const Home = () => {
   return (
-    <div>
+    <>
       <NavigationBar />
       <main>
         <section id="hero">
@@ -27,8 +28,19 @@ function App() {
           <Footer />
         </section>
       </main>
-    </div>
-  )
+    </>
+  );
+};
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
