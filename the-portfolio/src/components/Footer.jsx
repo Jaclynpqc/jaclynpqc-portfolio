@@ -5,11 +5,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Github, Linkedin, BookOpen, Instagram } from 'lucide-react';
 
 const IMAGE_PATHS = [
-    '/assets/contact/icon (2).svg',
-    '/assets/contact/icon (3).svg',
-    '/assets/contact/icon (4).svg',
-    '/assets/contact/icon (5).svg',
-    '/assets/contact/icon (6).svg',
+    '/assets/chrome/flowe (2).svg',
+    '/assets/chrome/flowe.svg',
+    '/assets/chrome/flower (2).svg',
+    '/assets/chrome/flower.svg',
+    '/assets/chrome/heart.svg',
+    '/assets/chrome/name.svg',
+    '/assets/chrome/star.svg',
+    '/assets/chrome/star (2).svg',
+    '/assets/chrome/star (3).svg',
+    '/assets/chrome/star (4).svg',
+    '/assets/chrome/star (5).svg',
+    '/assets/chrome/star (6).svg',
 ];
 
 // Physics configuration constants remain the same
@@ -19,7 +26,7 @@ const PHYSICS_CONFIG = {
   FRICTION: 0.95,
   BOUNCE_DAMPENING: 0.5,
   BOUNDARY_PADDING: 2,
-  VELOCITY_SCALE: 60
+  VELOCITY_SCALE: 50
 };
 
 // generateItems function remains the same
@@ -79,7 +86,7 @@ const SocialButton = ({ icon: Icon, label, href }) => (
 );
 
 const Footer = () => {
-  const [items, setItems] = useState(() => generateItems(30));
+  const [items, setItems] = useState(() => generateItems(20));
   const containerRef = useRef(null);
   const animationFrameRef = useRef();
   const mousePositionRef = useRef({ x: 0, y: 0 });
