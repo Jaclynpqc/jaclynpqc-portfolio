@@ -9,39 +9,39 @@ const Skills = () => {
             category: 'THE DESIGNER',
             items: [
                 {name: 'TouchDesigner',
-                image: '/src/assets/skills/touchdesigner.webp'
+                image: '/assets/skills/touchdesigner.webp'
                 },
                 {
                     name: 'Processing',
-                    image: '/src/assets/skills/processing.webp'
+                    image: '/assets/skills/processing.webp'
                 },
                 {
                     name: 'Figma',
-                    image: '/src/assets/skills/figma.svg'
+                    image: '/assets/skills/figma.svg'
                 },
                 {
                     name: 'Adobe Illustrator',
-                    image: '/src/assets/skills/adobeAI.png'
+                    image: '/assets/skills/adobeAI.png'
                 },
                 {
                     name: 'Adobe InDesign',
-                    image: '/src/assets/skills/adobe-indesign.svg'
+                    image: '/assets/skills/adobe-indesign.svg'
                 },
                 {
                     name: 'Adobe After Effects',
-                    image: '/src/assets/skills/adobeAfterEffects.png'
+                    image: '/assets/skills/adobeAfterEffects.png'
                 },
                 {
                     name: 'Adobe Premiere Pro',
-                    image: '/src/assets/skills/adobe-premiere-pro.svg'
+                    image: '/assets/skills/adobe-premiere-pro.svg'
                 },
                 {
                     name: 'Adobe Aero',
-                    image: '/src/assets/skills/adobeAero.png'
+                    image: '/assets/skills/adobeAero.png'
                 },
                 {
                     name: 'Canva',
-                    image: '/src/assets/skills/canva.svg'
+                    image: '/assets/skills/canva.svg'
                 },
             ]
         },
@@ -50,27 +50,27 @@ const Skills = () => {
             items: [
                 {
                     name: 'HTML5',
-                    image: '/src/assets/skills/html5.svg'
+                    image: '/assets/skills/html5.svg'
                 },
                 {
                     name: 'CSS',
-                    image: '/src/assets/skills/css.svg'
+                    image: '/assets/skills/css.svg'
                 },
                 {
                     name: 'JavaScript',
-                    image: '/src/assets/skills/javascript.svg'
+                    image: '/assets/skills/javascript.svg'
                 },
                 {
                     name: 'React',
-                    image: '/src/assets/skills/react.svg'
+                    image: '/assets/skills/react.svg'
                 },
                 {
                     name: 'Tailwind',
-                    image: '/src/assets/skills/tailwind.svg'
+                    image: '/assets/skills/tailwind.svg'
                 },
                 {
                     name: 'WordPress',
-                    image: '/src/assets/skills/wordpress.svg'
+                    image: '/assets/skills/wordpress.svg'
                 }
             ]
         },
@@ -79,23 +79,23 @@ const Skills = () => {
             items: [
                 {
                     name: 'Python',
-                    image: '/src/assets/skills/python.svg'
+                    image: '/assets/skills/python.svg'
                 },
                 {
                     name: 'C',
-                    image: '/src/assets/skills/c.svg'
+                    image: '/assets/skills/c.svg'
                 },
                 {
                     name: 'Java',
-                    image: '/src/assets/skills/java.svg'
+                    image: '/assets/skills/java.svg'
                 },
                 {
                     name: 'scikit-learn',
-                    image: '/src/assets/skills/scikitlearn.webp'
+                    image: '/assets/skills/scikitlearn.webp'
                 },
                 {
                     name: 'SQL',
-                    image: '/src/assets/skills/sql.svg'
+                    image: '/assets/skills/sql.svg'
                 }
             ]
         }

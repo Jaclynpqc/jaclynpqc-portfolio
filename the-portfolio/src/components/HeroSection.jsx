@@ -82,14 +82,14 @@ const DragPrompt = () => {
 const HeroSection = () => {
   // Array of your flatlay images with their initial positions
   const flatlayElements = [
-    { src: '/src/assets/items/laptop.svg', x:-100, y: 150},
-    { src: '/src/assets/items/glasses.svg', x: 200, y: -50 },
-    { src: '/src/assets/items/lipbalm.svg', x: 200, y: 100 },
-    { src: '/src/assets/items/digicam.svg', x: 1100, y: 150 },
-    { src: '/src/assets/items/clawclips.svg', x: 900, y: 290 },
-    { src: '/src/assets/items/ballet_shoes.svg', x: 200, y: 300 },
-    { src: '/src/assets/items/coffee.svg', x: 1000, y: 400 },
-    { src: '/src/assets/items/headphones.svg', x: 900, y: -80 },
+    { src: '/assets/items/laptop.svg', x:-100, y: 150},
+    { src: '/assets/items/glasses.svg', x: 200, y: -50 },
+    { src: '/assets/items/lipbalm.svg', x: 200, y: 100 },
+    { src: '/assets/items/digicam.svg', x: 1100, y: 150 },
+    { src: '/assets/items/clawclips.svg', x: 900, y: 290 },
+    { src: '/assets/items/ballet_shoes.svg', x: 200, y: 300 },
+    { src: '/assets/items/coffee.svg', x: 1000, y: 400 },
+    { src: '/assets/items/headphones.svg', x: 900, y: -80 },
   ];
 
   return (
