@@ -9,7 +9,7 @@ updated on: 03th November 2024, Sunday
 </div>
 
 # [Jaclyn Pham](https://jaclynpqc.vercel.app/)
-![line]
+
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ updated on: 03th November 2024, Sunday
 Hi I'm Jaclyn, a software engineering and digitial art student. I designed and developed this portfolio to showcase my skills and personality, and for the :sparkles: girly girls :sparkles: outthere. 
 With its interactive components and girly aesthetic, I hope you'll enjoy exploring my work. Let's connect!
 
-![line]
+
 
 ## Development
 
@@ -43,6 +43,6 @@ With its interactive components and girly aesthetic, I hope you'll enjoy explori
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=blue) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-![line]
+
 
 ## Nice to meet you 💗
