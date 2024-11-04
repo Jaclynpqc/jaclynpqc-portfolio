@@ -123,7 +123,7 @@ const Skills = () => {
           <div className="relative z-10 container mx-auto px-4 py-10">
             {/* Page Header */}
             <div className="text-center mb-16">
-              <h1 className="text-8xl font-['Inter'] font-black text-bordeaux mb-4 tracking-widest">THE SKILL SHOP</h1>
+              <h1 className="text-8xl font-['Ballet'] font-bold text-bordeaux mb-4 tracking-widest">The Skill Shop</h1>
               <p className="text-lg font-[Inter] font-bold text-black/60">
                 What are you looking for in me? Click to add skills to your receipt!
               </p>

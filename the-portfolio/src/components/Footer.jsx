@@ -226,7 +226,7 @@ const Footer = () => {
               <SocialButton 
                 icon={BookOpen} 
                 label="Blog" 
-                href="https://jaclynpham.netlify.app/blog.html" 
+                href="https://verbose-garbanzo-qzzkpn2.pages.github.io/#category=" 
               />
               <SocialButton 
                 icon={Instagram} 

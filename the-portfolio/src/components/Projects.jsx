@@ -3,113 +3,105 @@
 import React, { useState } from 'react';
 
 const ProjectCard = ({ project, index }) => {
-    const [isHovered, setIsHovered] = useState(false);
-  
-    return (
-      <div 
-        className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-32"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {/* Project Info - Full width on mobile, 5 cols on desktop */}
-        <div className="lg:col-span-5 order-1">
-          <div className="lg:sticky lg:top-8">
-            <div className="mb-6">
-              <span className="inline-block font-mono text-sm tracking-widest text-shiningknight border-b border-bloodbrother pb-1">
-                N°{String(index + 1).padStart(2, '0')}
-              </span>
-            </div>
-  
-            <div className="space-y-6">
-              <div>
-                <h2 className={`font-['Public Sans'] text-7xl lg:text-6xl font-black tracking-tight ${project.customStyle?.brand || 'text-bloodbrother'}`}>
-                  {project.brand}
-                </h2>
-                <p className="mt-2 text-base font[-'Public Sans'] font-light tracking-wide text-shiningknight">
-                  {project.brandDes}
-                </p>
-              </div>
-  
-              <h3 className={`text-xl lg:text-2xl font-['Public Sans'] font-bold leading-tight ${project.customStyle?.title || 'text-darkvoid'}`}>
-                {project.title}
-              </h3>
-  
-              <p className="text-base font-light leading-relaxed text-darkvoid max-w-xl">
-                {project.description}
-              </p>
-  
-              <div className="pt-4 border-t border-mauimist space-y-4">
-                <div>
-                  <span className="text-sm font-medium uppercase tracking-wider text-shiningknight">Role</span>
-                  <p className="mt-1 text-sm text-darkvoid">{project.role}</p>
-                </div>
-                
-                <div>
-                  <span className="text-sm font-medium uppercase tracking-wider text-shiningknight">Technologies</span>
-                  <p className="mt-1 text-sm text-bloodbrother">
-                    {project.technologies.join(' • ')}
-                  </p>
-                </div>
-  
-                {project.collaborators && (
-                  <div>
-                    <span className="text-sm font-medium uppercase tracking-wider text-shiningknight">Collaborators</span>
-                    <p className="mt-1 text-sm text-darkvoid">{project.collaborators}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div 
+      className="group relative border-b border-gray-200 py-12 flex flex-col md:flex-row items-start gap-8"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Left side: Text content */}
+      <div className="w-full md:w-1/2 space-y-6">
+        <div className="space-y-1">
+          <span className="font-mono text-sm tracking-widest text-gray-500">
+            N°{String(index + 1).padStart(2, '0')}
+          </span>
+          <h2 className={`text-5xl md:text-6xl font-bold tracking-tight ${project.customStyle?.brand || 'text-black'}`}>
+            {project.brand}
+          </h2>
+          <p className="text-gray-500 text-lg">
+            {project.brandDes}
+          </p>
         </div>
-  
-        {/* Project Image - Full width on mobile, 7 cols on desktop */}
-        <div className="lg:col-span-7 order-2">
-          <a 
-            href={project.link}
-            className="block relative aspect-[4/3] overflow-hidden  group"
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-darkvoid/10 z-10" />
-            <img
-              src={project.image}
-              alt={project.title}
-              className={`w-full h-full object-cover transition-transform duration-700 ${
-                isHovered ? 'scale-105' : 'scale-100'
-              }`}
-            />
-            {project.hoverMedia?.type === 'video' ? (
-              <video
-                src={project.hoverMedia.src}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                  isHovered ? 'opacity-100' : 'opacity-0'
-                }`}
-              />
-            ) : project.hoverImage && (
-              <img
-                src={project.hoverImage}
-                alt={`${project.title} - alternate view`}
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                  isHovered ? 'opacity-100' : 'opacity-0'
-                }`}
-              />
-            )}
-            
-            {/* View Project Overlay */}
-            <div className={`absolute inset-0 flex items-center justify-center bg-darkvoid/50 transition-opacity duration-500 z-20 ${
-              isHovered ? 'opacity-100' : 'opacity-0'
-            }`}>
-              <span className="text-white text-mono tracking-widest uppercase font-medium">
-                View Project →
-              </span>
+
+        <h3 className={`text-xl md:text-2xl font-medium ${project.customStyle?.title || 'text-gray-900'}`}>
+          {project.title}
+        </h3>
+
+        <p className="text-gray-600 leading-relaxed">
+          {project.description}
+        </p>
+
+        <div className="space-y-4 pt-4">
+          <div>
+            <span className="text-sm font-medium uppercase tracking-wider text-gray-500">Role</span>
+            <p className="mt-1 text-gray-900">{project.role}</p>
+          </div>
+          
+          <div>
+            <span className="text-sm font-medium uppercase tracking-wider text-gray-500">Technologies</span>
+            <p className="mt-1 text-gray-900">
+              {project.technologies.join(' • ')}
+            </p>
+          </div>
+
+          {project.collaborators && (
+            <div>
+              <span className="text-sm font-medium uppercase tracking-wider text-gray-500">Collaborators</span>
+              <p className="mt-1 text-gray-900">{project.collaborators}</p>
             </div>
-          </a>
+          )}
         </div>
       </div>
-    );
-  };
+
+      {/* Right side: Image */}
+      <div className="w-full md:w-1/2">
+        <a 
+          href={project.link}
+          className="block relative aspect-[4/3] rounded-lg overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10" />
+          <img
+            src={project.image}
+            alt={project.title}
+            className={`w-full h-full object-cover transition-transform duration-700 ${
+              isHovered ? 'scale-105' : 'scale-100'
+            }`}
+          />
+          {project.hoverMedia?.type === 'video' ? (
+            <video
+              src={project.hoverMedia.src}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                isHovered ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ) : project.hoverImage && (
+            <img
+              src={project.hoverImage}
+              alt={`${project.title} - alternate view`}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                isHovered ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          )}
+          
+          <div className={`absolute inset-0 flex items-center justify-center bg-black/50 transition-opacity duration-500 z-20 ${
+            isHovered ? 'opacity-100' : 'opacity-0'
+          }`}>
+            <span className="text-white font-mono tracking-widest uppercase font-medium">
+              View Project →
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  );
+};
 
 const Projects = () => {
   const projects = [
@@ -214,6 +206,7 @@ const Projects = () => {
   return (
     <section className="py-12 px-8 bg-mauimist">
       <div className="max-w-7xl mx-auto">
+        <h1 className="text-8xl font-['Ballet'] text-center font-bold text-bordeaux mb-4 tracking-widest">Case Studies</h1>
         {projects.map((project, index) => (
           <ProjectCard 
             key={project.brand} 

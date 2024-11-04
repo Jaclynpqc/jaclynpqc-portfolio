@@ -42,7 +42,7 @@ const DragElem = ({src, initialX, initialY}) => {
     <img
       ref={elementRef}
       src={src}
-      className={`absolute cursor-move w-32 h-32 select-none transition-opacity ${isDragging ? 'opacity-80' : 'opacity-100'}`}
+      className={`absolute cursor-move w-32 h-32 scale-150 select-none transition-opacity ${isDragging ? 'opacity-80' : 'opacity-100'}`}
       style={{
         transform: `translate(${position.x}px, ${position.y}px)`,
         zIndex: isDragging ? 50 : 1
@@ -90,6 +90,7 @@ const HeroSection = () => {
     { src: '/assets/items/ballet_shoes.svg', x: 200, y: 300 },
     { src: '/assets/items/coffee.svg', x: 1000, y: 400 },
     { src: '/assets/items/headphones.svg', x: 900, y: -80 },
+    { src: '/assets/polaroids/polaroid (2).svg', x: 450, y: -80 },
   ];
 
   return (
@@ -108,7 +109,7 @@ const HeroSection = () => {
           ))}
           {/* Main text */}
           <p className="text-3xl md:text-4xl lg:text-5xl leading-relaxed md:leading-relaxed lg:leading-relaxed relative">
-            <span className="font-['Inter'] font-black text-darkvoid tracking-wide">Hello world! I&apos;m Jaclyn!</span>{' '}
+            <span className="font-['Ballet'] text-4xl md:text-5xl lg:text-6xl font-bold text-darkvoid tracking-widest">Hello, I&apos;m Jaclyn!</span>{' '}
             <br/>
             <span className="font-['Inter'] font-light text-darkvoid"> I am a product designer (UI/UX) & creative technologist based in United States, working worldwide. I enjoy creating meaningful narratives through experimenting with new technology. </span>{' '}
             <br/>
@@ -126,29 +127,32 @@ const HeroSection = () => {
               <h2 className="text-2xl font-['Public Sans'] text-shiningknight font-medium mb-4 ">
                 About Me
               </h2>
-              <p className="max-w-7xl text-mauimist text-2xl md:text-3xl lg:text-4xl font-['Inter'] font-light leading-relaxed ">
+              <p className="max-w-7xl text-mauimist text-2xl md:text-3xl lg:text-4xl font-['Poppins'] font-light leading-relaxed ">
                 BS in Software Engineering and BA in Art, Science, and Innovation at Allegheny College. With a background in marketing, I thrive on creating engaging brand activation campaigns and pop-up events that drive customer engagement.
               </p>
               <br/>
-              <p className="max-w-7xl text-shiningknight text-2xl md:text-3xl lg:text-4xl font-['Inter'] font-light leading-relaxed ">
+              <p className="max-w-7xl text-shiningknight text-2xl md:text-3xl lg:text-4xl font-['Poppins'] font-light leading-relaxed ">
                 I&apos;m also an avid traveler and speak Vietnamese, English, and French. When I&apos;m not studying, you can find me designing websites, creating merchandise, teaching workshops, or launching a tech club!
               </p>
             </div>
 
             {/* Circular Button */}
-            <div className = "mt-10">
-              <a 
-                href="/path-to-your-resume.pdf" 
-                target="_blank"
-                rel="noopener noreferrer" 
-                className="flex-shrink-0 w-60 h-60 rounded-full bg-darkmaroon shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-105 group/button"
-              >
-                <span className="text-3xl font-['Public Sans'] font-black  text-mauimist text-center group-hover/button:scale-110 transition-transform duration-300">
-                  VIEW<br/>MY CV
-                </span>
-              </a>
-            </div>
-            
+            <div className="mt-10">
+                <a 
+                  href="https://drive.google.com/file/d/17FkvLZf7mpQ_fKpLMUTu8AA8udupfZJ1/view?usp=sharing" 
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="relative flex-shrink-0 w-60 h-60 block transition-all duration-300 hover:scale-105 group/button"
+                >
+                  {/* Image */}
+                  <img 
+                    src="/assets/polaroids/polaroid.svg" 
+                    alt="CV Button" 
+                    className="w-full mt-20 h-full object-cover scale-150"
+                  />
+                
+                </a>
+              </div>
           </div>
         </div>
         </div>
