@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import {useState, useEffect, useRef} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavigationBar from './components/NavBar';
 import HeroSection from './components/HeroSection';
@@ -9,11 +8,18 @@ import Skills from './components/ReceiptSkills';
 import Footer from './components/Footer';
 import NotFound from './components/404';
 
-//Main content
+// Main content
 const Home = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
-      <NavigationBar />
+      <NavigationBar onNavigate={scrollToSection} />
       <main>
         <section id="hero">
           <HeroSection />
