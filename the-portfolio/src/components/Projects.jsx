@@ -126,7 +126,7 @@ const Projects = () => {
       role: "Designer & Engineer",
       collaborators: "Heather Brand (project supervisor)",
       image: "/assets/projects/Marshal_initial.PNG",
-      hoverImage: "/assets/projects/marshall_default.png",
+      hoverImage: "/assets/projects/marshal_default.png",
       link: "https://jaclyn-pham.notion.site/Hiraeth-Acrylics-on-Wooden-Canvas-with-Touch-Sensitive-Sounds-Augmented-Reality-on-Tablet-8513ca00b6ed4686884a98bcd07b90c8?pvs=25",
     },
     {
