@@ -14,7 +14,7 @@ const ProjectCard = ({ project, index }) => {
       {/* Left side: Text content */}
       <div className="w-full md:w-1/2 space-y-6">
         <div className="space-y-1">
-          <span className="font-mono text-sm tracking-widest text-gray-500">
+          <span className="font-mono text-md tracking-widest text-gray-500">
             N°{String(index + 1).padStart(2, '0')}
           </span>
           <h2 className={`text-5xl md:text-6xl font-bold tracking-tight ${project.customStyle?.brand || 'text-black'}`}>
@@ -108,18 +108,14 @@ const Projects = () => {
     {
       brand: "MUJI",
       brandDes: "minimalist lifestyle brand",
-      title: "MERGING TRADITIONAL AND MODERN COMMUNICATION",
+      title: "FROM BRUSHSTROKE TO KEYSTROKE",
       description: "An interactive installation for Muji's new pen collection that reflects on the evolution of communication. Users type on a restored typewriter, and each keystroke creates a flowing pen stroke on a digital canvas.",
       technologies: ["touchDesigner", "p5.js"],
       role: "interaction designer",
       collaborators: "Alish Chhetri (hardware engineer), Emily Graber (project supervisor)",
-      image: "/assets/items/typewriter.svg",
-      hoverImage: "/assets/items/typewriter-hover.svg",
-      link: "/projects/muji-project",
-      customStyle: {
-        brand: "text-[#AD7C59]",
-        title: "text-bordeaux"
-      }
+      image: "/assets/projects/Muji.svg",
+      hoverImage: "/assets/projects/MujiHoveredPage.svg",
+      link: "",
     },
     {
       brand: "MARSHALL",
@@ -132,10 +128,6 @@ const Projects = () => {
       image: "/assets/items/headphones.svg",
       hoverImage: "/assets/items/headphones-hover.svg",
       link: "/projects/marshall-project",
-      customStyle: {
-        brand: "text-[##27251F]",
-        title: "text-[#693F23]"
-      }
     },
     {
       brand: "My Heritage",
@@ -145,13 +137,9 @@ const Projects = () => {
       technologies: ["Figma", "React", "TailwindCCSS", "NextJS"],
       role: "UI Designer, Front-end Web Developer",
       collaborators: "Trang Hoang (Back-end web developer), Bullmoose Marketing",
-      image: "/assets/items/headphones.svg",
-      hoverImage: "/assets/items/headphones-hover.svg",
-      link: "/projects/marshall-project",
-      customStyle: {
-        brand: "text-furioustiger",
-        title: "text-black"
-      }
+      image: "/assets/projects/myHeritage_Image.svg",
+      hoverImage: "/assets/projects/myHeritage_Layout.svg",
+      link: "https://www.figma.com/proto/0JAnQNfkQoGDaJXri2cRhb/My-Heritage?node-id=86-3&node-type=canvas&t=tq4TR0pbFgFldjvf-1&scaling=min-zoom&content-scaling=fixed&page-id=86%3A2",
     },
     {
       brand: "Liberty Electronics",
@@ -161,13 +149,21 @@ const Projects = () => {
       technologies: ["Figma", "WordPress", "HTML", "CSS", "PHP"],
       role: "UI Designer, Front-end Web Developer",
       collaborators: "Bullmoose Marketing",
-      image: "/assets/items/headphones.svg",
-      hoverImage: "/assets/items/headphones.svg",
-      link: "/projects/libertyelectronics",
-      customStyle: {
-        brand: "text-[#0077C0]",
-        title: "text-[#1b1b1b]"
-      }
+      image: "/assets/projects/Liberty Electronics.svg",
+      hoverImage: "/assets/projects/HoveredImage_LibertyElectronics.svg",
+      link: "https://www.figma.com/proto/osKNrg756oDDcSSzDX2foX/Liberty-Electronics?node-id=137-23&node-type=canvas&t=2Qj2FpnCLnwQQX2w-1&scaling=min-zoom&content-scaling=fixed&page-id=137%3A2",
+    },
+    {
+      brand: "Quarto Game",
+      brandDes: "interactive game",
+      title: "MAKE THE COFFEE WAITING TIME FUN - AN INTERACTIVE GAME WITH AI ",
+      description: "(Ongoing) Liberty Electronics provides electrical cable assemblies, wire haresses for demanding defense and commercial OEM. They want to modernize the company website and convert it into a bold, dynamic and professional user interface.",
+      technologies: ["Figma", "WordPress", "HTML", "CSS", "PHP"],
+      role: "UI Designer, Front-end Web Developer",
+      collaborators: "Bullmoose Marketing",
+      image: "/assets/projects/QuartoGameImage.svg",
+      hoverImage: "/assets/projects/Quarto Bakery Layout.svg",
+      link: "https://github.com/Jaclynpqc/quarto-ai",
     },
     {
       brand: "Le Voyage dans la Lune",
@@ -179,11 +175,7 @@ const Projects = () => {
       collaborators: "",
       image: "/assets/projects/aero_recording 2.gif",
       hoverImage: "/assets/projects/aero_recording 2.gif",
-      link: "/projects/ARmoon",
-      customStyle: {
-        brand: "text-[#4D2DB7]",
-        title: "text-[#0E21A0]"
-      }
+      link: "https://jaclyn-pham.notion.site/Le-Voyage-dans-la-Lune-767c950852de414694ebc6366774c005",
     },
     {
       brand: "Allegheny Lab for Innovation and Creativity",
@@ -195,11 +187,7 @@ const Projects = () => {
       collaborators: "Funded through the Dean's Fund for Student-Faculty Research, McCune Foundation Fund, and in Professor Heather Brand's capacity as the Eila v. Bush Endowed Professor of Art",
       image: "/assets/items/headphones.svg",
       hoverImage: "/assets/items/headphones-hover.svg",
-      link: "/projects/alic-workshop",
-      customStyle: {
-        brand: "text-[#FF5200]",
-        title: "text-[#FFA51E]"
-      }
+      link: "https://jaclyn-pham.notion.site/Inclusive-Digital-Art-Workshop-for-All-Levels-df5b8b69ebad401a8c2792506e6e1041?pvs=25",
     }
   ];
 
