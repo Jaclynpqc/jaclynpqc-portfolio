@@ -125,9 +125,9 @@ const Projects = () => {
       technologies: ["Arduino Auditions", "Arduino IDE", "Adobe Aero"],
       role: "Designer & Engineer",
       collaborators: "Heather Brand (project supervisor)",
-      image: "/assets/items/headphones.svg",
-      hoverImage: "/assets/items/headphones-hover.svg",
-      link: "/projects/marshall-project",
+      image: "/assets/projects/Marshal_initial.PNG",
+      hoverImage: "/assets/projects/marshall_default.png",
+      link: "https://jaclyn-pham.notion.site/Hiraeth-Acrylics-on-Wooden-Canvas-with-Touch-Sensitive-Sounds-Augmented-Reality-on-Tablet-8513ca00b6ed4686884a98bcd07b90c8?pvs=25",
     },
     {
       brand: "My Heritage",
