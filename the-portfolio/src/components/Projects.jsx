@@ -115,7 +115,7 @@ const Projects = () => {
       collaborators: "Alish Chhetri (hardware engineer), Emily Graber (project supervisor)",
       image: "/assets/projects/Muji.svg",
       hoverImage: "/assets/projects/MujiHoveredPage.svg",
-      link: "",
+      link: "https://jaclyn-pham.notion.site/The-Typewriter-Piano-a-multisensory-interface-9935bac78f3b4ee3aaeb9ee2e6d223ac?pvs=25",
     },
     {
       brand: "MARSHALL",
