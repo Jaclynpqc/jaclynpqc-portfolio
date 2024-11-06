@@ -38,9 +38,14 @@ export default function NavigationBar({ fontStyle = 'Iter', onNavigate }) {
 
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
-    onNavigate(sectionId);
+    if (sectionId === 'cv') {
+      // Open the external CV link
+      window.open('https://drive.google.com/file/d/17FkvLZf7mpQ_fKpLMUTu8AA8udupfZJ1/view?usp=sharing', '_blank');
+    } else {
+      // Scroll to the corresponding section
+      onNavigate(sectionId);
+    }
   };
-
   const navItems = [
     { text: 'WORK', href: '#work', id: 'work' },
     { text: 'SKILLS', href: '#skills', id: 'skills' },

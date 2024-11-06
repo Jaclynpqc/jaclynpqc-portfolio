@@ -185,8 +185,8 @@ const Projects = () => {
       technologies: ["Adobe Indesign", "Adobe Illustrator", "Adobe Premiere Pro", "Adobe Photoshop", "Adobe After Effects"],
       role: "Curriculumn Developer, Designer",
       collaborators: "Funded through the Dean's Fund for Student-Faculty Research, McCune Foundation Fund, and in Professor Heather Brand's capacity as the Eila v. Bush Endowed Professor of Art",
-      image: "/assets/items/headphones.svg",
-      hoverImage: "/assets/items/headphones-hover.svg",
+      image: "/assets/projects/workshop.png",
+      hoverImage: "/assets/projects/workshop_hovered.JPG",
       link: "https://jaclyn-pham.notion.site/Inclusive-Digital-Art-Workshop-for-All-Levels-df5b8b69ebad401a8c2792506e6e1041?pvs=25",
     }
   ];
