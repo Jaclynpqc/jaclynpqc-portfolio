@@ -1,6 +1,7 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 const Flower = ({ active }) => (
   <svg 
@@ -10,7 +11,6 @@ const Flower = ({ active }) => (
     }`}
   >
     <g className="transition-opacity duration-500" style={{ opacity: active ? '1' : '0.7' }}>
-      {/* Petals */}
       {[0, 60, 120, 180, 240, 300].map((rotation, i) => (
         <path
           key={i}
@@ -24,7 +24,6 @@ const Flower = ({ active }) => (
           }}
         />
       ))}
-      {/* Center */}
       <circle cx="50" cy="50" r="5" fill="#FF6B88" />
     </g>
   </svg>
@@ -47,52 +46,119 @@ const SquigglyLine = () => (
 
 const ExperienceTimeline = () => {
   const [activeId, setActiveId] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   const experiences = [
     {
-      title: "Senior Software Engineer",
-      company: "Tech Company",
-      period: "2022 - Present",
-      details: [
-        "Led development of key features resulting in 40% user growth",
-        "Mentored junior developers and implemented best practices",
-        "Architected and deployed microservices infrastructure"
-      ]
-    },
-    {
-      title: "Full Stack Developer",
-      company: "Digital Agency",
-      period: "2020 - 2022",
-      details: [
-        "Built responsive web applications using React and Node.js",
-        "Improved site performance by 60% through optimization",
-        "Collaborated with design team on UX improvements"
-      ]
-    },
-    {
-      title: "Junior Developer",
-      company: "Startup Inc",
-      period: "2018 - 2020",
-      details: [
-        "Developed and maintained client websites",
-        "Implemented payment integration systems",
-        "Participated in daily scrum meetings and sprint planning"
-      ]
-    },
-    {
-        title: "Junior Developer",
-        company: "Startup Inc",
-        period: "2018 - 2020",
+        title: "Web Development Intern",
+        company: "Bull Moose Marketing",
+        period: "June 2024 - Present",
         details: [
-          "Developed and maintained client websites",
-          "Implemented payment integration systems",
-          "Participated in daily scrum meetings and sprint planning"
+        "Assisted Lead of Development with implementation of custom themes across state-wide clientele",
+        "Developed custom WordPress themes using HTML, CSS, JavaScript, and PHP",
+        "Participated in the entire development life cycle, from design to deployment",
+        "Collaborated with clients on design mockups, pitches, and CI/CD processes",
+        "Demonstrated effective execution of tasks resulting in extension of internship"
         ]
-      }
-  ];
+    },
+    {
+        title: "Human-Computer Interaction Researcher",
+        company: "Allegheny College",
+        period: "June 204 - October 2024",
+        details: [
+        "Developed a dynamic visual interface in TouchDesigner and Python, effectively mapping OSC messages to control digital brushstroke movements and integrate typing actions with creative visual and auditory feedback",
+        "Collaborated with a research team to produce a scholarly research paper for submission to SIGGRAPH Asia 2024, showcasing strong academic writing and communication skills"
+        ]
+    },
+    {
+        title: "Software Engineering Researcher",
+        company: "Allegheny College",
+        period: "January 2024 - September 2024",
+        details: [
+        "Developed a prediction model to assess test suite quality, compared and reported standard training model performance",
+        "Conducted an empirical study on Python projects, analyzing the correlation between anti-patterns and mutation scores"
+        ]
+    },
+    {
+        title: "Web Application/Project Management Intern",
+        company: "Food Trucks Association of Canada (FTAC)",
+        period: "January 2024 - May 2024",
+        details: [
+        "Responsible for the front-end web development and overall management of the tech team of 4 developers",
+        "Co-developed a full-stack web application for an online learning platform, integrating with a member portal",
+        "Developed a responsive website UI using HTML, CSS, and JavaScript based on design feedback and client requirements",
+        "Analyzed user research trends and suggested changes to existing design processes for better results"
+        ]
+    },
+    {
+        title: "Database Analysis Project",
+        company: "Acutec Precision Aerospace",
+        period: "December 2023",
+        details: [
+        "Collaborated in a short-term team project with Acutec, analyzing real-world data with SQL to extract insights on material usage, production efficiency, and nonconformance trends",
+        "Created user-friendly visualization of the data with Matplotlib, enhancing client satisfaction with report documentation"
+        ]
+    },
+    {
+        title: "Software Engineer Intern",
+        company: "Allegheny College",
+        period: "August 2023 - December 2023",
+        details: [
+        "Co-developed an AST pattern detection tool using Python that streamlined code analysis for 100+ Computer Science students, improving grading process and code quality",
+        "Implemented software version access and configured logging to syslog in Python to support the testing/debugging process",
+        "Automated XPath checks estimated to reduce grading time by 50% and increase code pattern checking accuracy",
+        "Wrote clear and concise documentation of Chasten within a custom documentation center for students and professors"
+        ]
+    },
+    {
+        title: "Lead Designer",
+        company: "SheCodes Hackathon Vietnam",
+        period: "June 2023 - October 2023",
+        details: [
+        "Provided leadership and direction across multiple teams in creating a brand identity package to promote the Hackathon in 3 major cities in Vietnam: Hanoi, Sai Gon, and Da Nang",
+        "Managed a team of 7 designers remotely, coordinating their efforts and ensuring project deadlines were met",
+        "Collaborated closely with the Marketing Team to design engaging and visually compelling social media posts, attracting 700+ applicants",
+        "Assisted technology team with creating web designs to enhance the online presence and user experience"
+        ]
+    },
+    {
+        title: "Marketing Intern",
+        company: "Golden Gate Restaurant Group",
+        period: "June 2022 - August 2022",
+        details: [
+        "Designed a digital menu and wine catalog displayed on LCD screens using Adobe Creative Suite",
+        "Supported and managed schedules with in-house teams pre- and post-production processes such as photoshoots and new seasonal menus",
+        "Proposed a marketing campaign for the last quarter of 2022 after reviewing previous statistics and researching upcoming trends",
+        "Attended brainstorming sessions with mentors and presented ideas to marketing managers"
+        ]
+    },
+    {
+        title: "Design/Video Production Intern",
+        company: "COOKED F&B Business School",
+        period: "March 2022 - May 2022",
+        details: [
+        "Specialized in Reels production for the Cooked Instagram platform",
+        "Assisted in video and content production with Ms. Hà Chu, founder of COOKED, KOL in the F&B industry",
+        "Applied skills in Adobe Premiere and After Effects to produce quality products",
+        "Followed up with mentor post-production to improve upcoming digital content"
+        ]
+    },
+    {
+        title: "Content Creator",
+        company: "Jaclynpqc TikTok and Instagram Platforms",
+        period: "May 2020 - May 2022",
+        details: [
+        "Created a supportive community of 45,000 followers, raising awareness about mental health, self-love, and education",
+        "Produced video content using Adobe Premiere Pro, maintaining viewer engagement by posting daily",
+        "Developed engaging and visually impactful short-form videos to strengthen audience connection"
+        ]
+    }
+    ];
+
+  const displayedExperiences = showAll ? experiences : experiences.slice(0, 3);
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-darkmaroon">
+    <div className="max-w-8xl mx-auto p-6 bg-darkmaroon relative">
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(10px); }
@@ -110,12 +176,13 @@ const ExperienceTimeline = () => {
         }
       `}</style>
 
-      <h2 className="text-3xl font-['Ballet'] font-black mb-8 text-bloodbrother tracking-wider">Experience</h2>
+      <h1 className="text-8xl font-['Ballet'] font-bold text-mauimist mb-4 tracking-widest">Experience</h1>
+      
       <div className="relative">
         <SquigglyLine />
 
         <div className="space-y-12">
-          {experiences.map((exp, index) => (
+          {displayedExperiences.map((exp, index) => (
             <div key={index} className="relative pl-16">
               <Flower active={activeId === index} />
 
@@ -155,6 +222,23 @@ const ExperienceTimeline = () => {
             </div>
           ))}
         </div>
+        {experiences.length > 3 && (
+          <div className="flex justify-center mt-8 absolute left-0 right-0">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="flex items-center p-3 bg-rose-100 hover:bg-rose-200 rounded-full transition-colors duration-300 shadow-md"
+              aria-label={showAll ? "Show Less" : "Show More"}
+            >
+              <ChevronDown
+                className={`text-rose-600 transition-transform duration-300 ${
+                  showAll ? 'rotate-180' : 'rotate-0'
+                }`} 
+                size={24}
+              />
+            </button>
+          </div>
+        )}
+        
       </div>
     </div>
   );
