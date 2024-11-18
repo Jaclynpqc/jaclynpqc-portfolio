@@ -161,7 +161,7 @@ const Projects = () => {
       technologies: ["Pygame", "Python"],
       role: "Developer",
       collaborators: "",
-      image: "/assets/projects/QuartoGameImage.svg",
+      image: "/assets/projects/quarto-gif.gif",
       hoverImage: "/assets/projects/Quarto Bakery Layout.svg",
       link: "https://github.com/Jaclynpqc/quarto-ai",
     },

@@ -17,7 +17,7 @@ export default function NavigationBar({ fontStyle = 'Iter', onNavigate }) {
       setIsScrolled(window.scrollY > 0);
       
       // Determine which section is currently in view
-      const sections = ['hero', 'work', 'skills', 'contact'];
+      const sections = ['hero', 'work', 'skills','experience', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -49,6 +49,7 @@ export default function NavigationBar({ fontStyle = 'Iter', onNavigate }) {
   const navItems = [
     { text: 'WORK', href: '#work', id: 'work' },
     { text: 'SKILLS', href: '#skills', id: 'skills' },
+    { text: 'EXPERIENCE', href: '#experience', id: 'experience' },
     { text: 'CV', href: 'https://drive.google.com/file/d/17FkvLZf7mpQ_fKpLMUTu8AA8udupfZJ1/view?usp=sharing', id: 'cv' },
     { text: 'CONTACT', href: '#contact', id: 'contact' }
   ];

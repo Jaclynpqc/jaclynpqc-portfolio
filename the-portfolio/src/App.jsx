@@ -7,6 +7,8 @@ import Projects from './components/Projects';
 import Skills from './components/ReceiptSkills';
 import Footer from './components/Footer';
 import NotFound from './components/404';
+import AboutMe from './components/AboutMe';
+import ExperienceTimeline from './components/Experience';
 
 // Main content
 const Home = () => {
@@ -24,11 +26,18 @@ const Home = () => {
         <section id="hero">
           <HeroSection />
         </section>
+        <section id="experience" className="scroll-mt-20">
+          <ExperienceTimeline />
+        </section>
         <section id="work" className="scroll-mt-20">
           <Projects />
         </section>
         <section id="skills" className="scroll-mt-20">
           <Skills />
+        </section>
+
+        <section id = "aboutMe" className = "scroll-mt-20">
+          <AboutMe />
         </section>
         <section id="contact" className="scroll-mt-20">
           <Footer />
