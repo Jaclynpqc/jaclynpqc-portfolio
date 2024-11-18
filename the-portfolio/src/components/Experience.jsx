@@ -226,11 +226,11 @@ const ExperienceTimeline = () => {
           <div className="flex justify-center mt-8 absolute left-0 right-0">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="flex items-center p-3 bg-rose-100 hover:bg-rose-200 rounded-full transition-colors duration-300 shadow-md"
+              className="flex items-center p-3 hover:bg-bloodymary rounded-full transition-colors duration-300 shadow-md"
               aria-label={showAll ? "Show Less" : "Show More"}
             >
               <ChevronDown
-                className={`text-rose-600 transition-transform duration-300 ${
+                className={`text-darkvoid hover:text-white transition-transform duration-300 ${
                   showAll ? 'rotate-180' : 'rotate-0'
                 }`} 
                 size={24}

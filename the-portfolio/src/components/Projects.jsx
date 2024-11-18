@@ -106,10 +106,10 @@ const ProjectCard = ({ project, index }) => {
 const Projects = () => {
   const projects = [
     {
-      brand: "MUJI",
+      brand: "MUJI IMAGINE",
       brandDes: "minimalist lifestyle brand",
       title: "FROM BRUSHSTROKE TO KEYSTROKE",
-      description: "An interactive installation for Muji's new pen collection that reflects on the evolution of communication. Users type on a restored typewriter, and each keystroke creates a flowing pen stroke on a digital canvas.",
+      description: "(portfolio project) An interactive installation for Muji's new pen collection that reflects on the evolution of communication. Users type on a restored typewriter, and each keystroke creates a flowing pen stroke on a digital canvas.",
       technologies: ["touchDesigner", "p5.js"],
       role: "interaction designer",
       collaborators: "Alish Chhetri (hardware engineer), Emily Graber (project supervisor)",
@@ -118,10 +118,10 @@ const Projects = () => {
       link: "https://jaclyn-pham.notion.site/The-Typewriter-Piano-a-multisensory-interface-9935bac78f3b4ee3aaeb9ee2e6d223ac?pvs=25",
     },
     {
-      brand: "MARSHALL",
+      brand: "MARSHALL IMAGINE",
       brandDes: "sound technology",
       title: "BRINGING MUSIC TO LIFE",
-      description: "An interactive touch-sensitive painting that visualizes music and lets users engage with sound in a tactile way.",
+      description: "(portfolio project) An interactive touch-sensitive painting that visualizes music and lets users engage with sound in a tactile way.",
       technologies: ["Arduino Auditions", "Arduino IDE", "Adobe Aero"],
       role: "Designer & Engineer",
       collaborators: "Heather Brand (project supervisor)",
@@ -154,6 +154,18 @@ const Projects = () => {
       link: "https://www.figma.com/proto/osKNrg756oDDcSSzDX2foX/Liberty-Electronics?node-id=137-23&node-type=canvas&t=2Qj2FpnCLnwQQX2w-1&scaling=min-zoom&content-scaling=fixed&page-id=137%3A2",
     },
     {
+      brand: "Golden Gate Restaurant Group ",
+      brandDes: "Established in 2005, Golden Gate appies the restaurant chain model in Vietnam with five main casual dining cuisines which are Hotpot, BBQ, Asian, Western, and Cafeteria. ",
+      title: "MARKETING CAMPAIGN Q4 2024",
+      description: "As 1 of 2 interns in Hanoi Headquarter branch, I was in charge of the branding for Ashima Restaurant Chain (4 locations in Hanoi). As my final project during my internship, I applied marketing knowledge and assets from the brand to create a campaign that would reach potential audiences from different segments, establishing connections with current customers. ",
+      technologies: ["Google Slides", "Canva", "Google Sheet"],
+      role: "Branding Intern",
+      collaborators: "Minh Chau Tran (Assistant Brand Manager), Hoa Tran (Brand Manager)",
+      image: "/assets/projects/ashima.png",
+      hoverImage: "/assets/projects/ashima-hovered.png",
+      link: "https://www.notion.so/jaclyn-pham/Branding-Internship-June-2022-August-2022-7611210db3b14e40973d4e71012c2b70?pvs=4",
+    },
+    {
       brand: "Quarto Game",
       brandDes: "interactive game",
       title: "MAKE THE COFFEE WAITING TIME FUN - AN INTERACTIVE GAME WITH AI ",
@@ -164,6 +176,18 @@ const Projects = () => {
       image: "/assets/projects/quarto-gif.gif",
       hoverImage: "/assets/projects/Quarto Bakery Layout.svg",
       link: "https://github.com/Jaclynpqc/quarto-ai",
+    },
+    {
+      brand: "Allegheny Lab for Innovation and Creativity",
+      brandDes: "ALIC",
+      title: "ALIC WORKSHOP SERIES",
+      description: "Wouldn't it be nice if digital art was accessible for everyone? This project is an ongoing no-cost workshop for all faculty and students in Allegheny College interested in learning digital art. Workshops run weekly since 2023.",
+      technologies: ["Adobe Indesign", "Adobe Illustrator", "Adobe Premiere Pro", "Adobe Photoshop", "Adobe After Effects"],
+      role: "Curriculumn Developer, Designer",
+      collaborators: "Funded through the Dean's Fund for Student-Faculty Research, McCune Foundation Fund, and in Professor Heather Brand's capacity as the Eila v. Bush Endowed Professor of Art",
+      image: "/assets/projects/workshop.png",
+      hoverImage: "/assets/projects/workshop_hovered.JPG",
+      link: "https://jaclyn-pham.notion.site/Inclusive-Digital-Art-Workshop-for-All-Levels-df5b8b69ebad401a8c2792506e6e1041?pvs=25",
     },
     {
       brand: "Le Voyage dans la Lune",
@@ -177,18 +201,6 @@ const Projects = () => {
       hoverImage: "/assets/projects/aero_recording 2.gif",
       link: "https://jaclyn-pham.notion.site/Le-Voyage-dans-la-Lune-767c950852de414694ebc6366774c005",
     },
-    {
-      brand: "Allegheny Lab for Innovation and Creativity",
-      brandDes: "ALIC",
-      title: "ALIC WORKSHOP SERIES",
-      description: "Wouldn't it be nice if digital art was accessible for everyone? This project is an ongoing no-cost workshop for all faculty and students in Allegheny College interested in learning digital art. Workshops run weekly since 2023.",
-      technologies: ["Adobe Indesign", "Adobe Illustrator", "Adobe Premiere Pro", "Adobe Photoshop", "Adobe After Effects"],
-      role: "Curriculumn Developer, Designer",
-      collaborators: "Funded through the Dean's Fund for Student-Faculty Research, McCune Foundation Fund, and in Professor Heather Brand's capacity as the Eila v. Bush Endowed Professor of Art",
-      image: "/assets/projects/workshop.png",
-      hoverImage: "/assets/projects/workshop_hovered.JPG",
-      link: "https://jaclyn-pham.notion.site/Inclusive-Digital-Art-Workshop-for-All-Levels-df5b8b69ebad401a8c2792506e6e1041?pvs=25",
-    }
   ];
 
   return (
