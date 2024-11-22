@@ -75,8 +75,9 @@ const ExperienceTimeline = () => {
         company: "Allegheny College",
         period: "January 2024 - September 2024",
         details: [
-        "Developed a prediction model to assess test suite quality, compared and reported standard training model performance",
-        "Conducted an empirical study on Python projects, analyzing the correlation between anti-patterns and mutation scores"
+        "Developed a prediction model to assess test suite quality, comparing performance of standard training models",
+        "Conducted an empirical study on Python projects, analyzing the correlation between anti-patterns and mutation scores",
+        "Utilized Python (Pandas, NumPy) for data analysis, identifying patterns to improve software maintainability" 
         ]
     },
     {
@@ -223,14 +224,15 @@ const ExperienceTimeline = () => {
           ))}
         </div>
         {experiences.length > 3 && (
-          <div className="flex justify-center mt-8 absolute left-0 right-0">
+          <div className="text-white hover:text-black flex justify-center absolute left-0 right-0">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="flex items-center p-3 hover:bg-bloodymary rounded-full transition-colors duration-300 shadow-md"
+              className="flex items-center p-3 hover:bg-white bg-darkvoid rounded-md transition-colors duration-300 shadow-md"
               aria-label={showAll ? "Show Less" : "Show More"}
             >
+              <p>View all experiences</p>
               <ChevronDown
-                className={`text-darkvoid hover:text-white transition-transform duration-300 ${
+                className={` transition-transform duration-300 ${
                   showAll ? 'rotate-180' : 'rotate-0'
                 }`} 
                 size={24}

@@ -116,15 +116,15 @@ const Skills = () => {
           {/* Background Layer */}
           <div className="absolute max-w-8xl inset-0 bg-stone-50 opacity-90">
             {/* Background Image */}
-            <div className="absolute inset-0 bg-[url('')] bg-cover bg-center mix-blend-multiply" />
+            <div className="absolute inset-0 bg-[url('/assets/balloon.gif')] bg-cover bg-center mix-blend-multiply" />
           </div>
     
           {/* Content Layer */}
-          <div className="relative z-10 container mx-auto px-4 py-10">
+          <div className="relative z-10 container mx-auto px-4 py-2">
             {/* Page Header */}
             <div className="text-center mb-16">
-              <h1 className="text-8xl font-['Ballet'] font-bold text-bordeaux mb-4 tracking-widest">The Skill Shop</h1>
-              <p className="text-lg font-[Inter] font-bold text-black/60">
+              <h1 className="text-8xl font-['Ballet'] font-bold text-bloodymary mt-10 mb-2 tracking-widest">The Skill Shop</h1>
+              <p className="text-lg mt-4 font-[Inter] font-bold text-black/35">
                 What are you looking for in me? Click to add skills to your receipt!
               </p>
             </div>
@@ -136,7 +136,7 @@ const Skills = () => {
                 {skills.map((category) => (
                   <div key={category.category} className="mb-10">
                     <div className="mb-6">
-                      <h2 className="text-2xl font-[Inter] font-bold text-black mb-2">{category.category}</h2>
+                      <h2 className="text-2xl font-[Inter] font-bold text-darkmaroon mb-2">{category.category}</h2>
                       <h3 className="text-xl text-black/80 mb-1">{category.company}</h3>
                       <p className="text-black/60">{category.period}</p>
                     </div>
@@ -145,12 +145,12 @@ const Skills = () => {
                         <button
                           key={skill.name}
                           onClick={() => handleSkillClick(skill.name)}
-                          className="w-20 h-20 bg-white rounded-lg flex items-center justify-center hover:bg-[#E8E8D0] transition-all duration-300 hover:scale-105 shadow-md"
+                          className="w-20 h-20  rounded-lg flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-105 shadow-md"
                         >
                           <img 
                             src={skill.image} 
                             alt={skill.name} 
-                            className="w-12 h-12 object-contain scale-150"
+                            className="w-12 h-12 object-contain scale-125"
                           />
                         </button>
                       ))}
@@ -164,11 +164,11 @@ const Skills = () => {
                 {/* Receipt Texture Layer */}
                 <div className="absolute inset-0">
                   {/* Add paper texture*/}
-                  <div className="absolute inset-0 bg-[url('')] bg-cover bg-center opacity-20" />
+                  <div className="absolute inset-0 bg-[url('/assets/receipt1.jpeg')] bg-cover bg-center opacity-50" />
                 </div>
     
                 {/* Receipt Content */}
-                <div className="relative bg-white/90 backdrop-blur-sm shadow-lg rounded-lg">
+                <div className="relative backdrop-blur-sm shadow-lg rounded-lg">
                   <div className="p-8">
                     <div className="font-['VT323'] text-gray-800">
                       <h2 className="text-3xl font-bold mb-4 text-center">RECEIPT</h2>
@@ -176,7 +176,7 @@ const Skills = () => {
                         Thank you for purchasing at Jaclyn Pham. Satisfaction guarateed!
                       </p>
                       <p className="text-lg mb-6 text-center">
-                        Order Number: #COLLABORATION2024
+                        Order Number: #HIR3M3
                       </p>
                       <div className="border-t-2 border-b-2 border-gray-300 py-4">
                         <div className="flex justify-between mb-4">
