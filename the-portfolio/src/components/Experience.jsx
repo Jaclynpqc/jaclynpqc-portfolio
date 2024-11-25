@@ -230,7 +230,7 @@ const ExperienceTimeline = () => {
               className="flex items-center p-3 hover:bg-white bg-darkvoid rounded-md transition-colors duration-300 shadow-md"
               aria-label={showAll ? "Show Less" : "Show More"}
             >
-              <p>View all experiences</p>
+              <p>VIEW ALL EXPERIENCE</p>
               <ChevronDown
                 className={` transition-transform duration-300 ${
                   showAll ? 'rotate-180' : 'rotate-0'

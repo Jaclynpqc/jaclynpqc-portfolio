@@ -95,9 +95,9 @@ const HeroSection = () => {
 
   return (
     <>
-      <div className="h-[60vh] relative bg-mauimist flex items-center justify-center overflow-hidden">
+      <div className="h-[60vh] relative  bg-mauimist flex items-center justify-center overflow-hidden">
         <DragPrompt />
-        <div className="max-w-6xl mx-auto text-center relative -mb-10">
+        <div className="max-w-6xl mx-auto text-center relative -mb-10 mt-5">
           {/* Flatlay Elements */}
           {flatlayElements.map((element, index) => (
             <DragElem

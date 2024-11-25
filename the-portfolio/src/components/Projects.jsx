@@ -130,6 +130,18 @@ const Projects = () => {
       link: "https://jaclyn-pham.notion.site/Hiraeth-Acrylics-on-Wooden-Canvas-with-Touch-Sensitive-Sounds-Augmented-Reality-on-Tablet-8513ca00b6ed4686884a98bcd07b90c8?pvs=25",
     },
     {
+      brand: "JACLYN PHAM",
+      brandDes: "personal portfolio",
+      title: "GET TO KNOW ME",
+      description: "(portfolio project) I designed and developed this portfolio to showcase my skills and personality, and for the ✨ girly girls ✨ outthere. With its interactive components and girly aesthetic, I hope you'll enjoy exploring my work.",
+      technologies: ["ReactJS", "Vite", "TailwindCSS", "Vercel", "JavaScript", "HTML", "CSS"],
+      role: "Creator",
+      collaborators: "",
+      image: "/assets/projects/portfolio_default.png",
+      hoverImage: "/assets/projects/portfolio_hovered.png",
+      link: "https://github.com/Jaclynpqc/jaclynpqc-portfolio",
+    },
+    {
       brand: "Quarto Game",
       brandDes: "interactive game",
       title: "MAKE THE COFFEE WAITING TIME FUN - AN INTERACTIVE GAME WITH AI ",
