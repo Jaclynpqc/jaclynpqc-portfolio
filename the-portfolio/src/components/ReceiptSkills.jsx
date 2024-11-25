@@ -112,7 +112,7 @@ const Skills = () => {
     }
     
     return (
-        <div className="relative min-h-screen">
+        <div className="relative mt-5 min-h-screen">
           {/* Background Layer */}
           <div className="absolute max-w-8xl inset-0 bg-stone-50 opacity-90">
             {/* Background Image */}
