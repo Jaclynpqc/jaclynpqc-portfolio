@@ -26,11 +26,11 @@ const Home = () => {
         <section id="hero">
           <HeroSection />
         </section>
-        <section id="skills" className="scroll-mt-20">
-          <Skills />
-        </section>
         <section id="experience" className="scroll-mt-20">
           <ExperienceTimeline />
+        </section>
+        <section id="skills" className="scroll-mt-20">
+          <Skills />
         </section>
         <section id="work" className="scroll-mt-20">
           <Projects />
