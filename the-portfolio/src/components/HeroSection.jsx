@@ -90,7 +90,7 @@ const HeroSection = () => {
     { src: '/assets/items/ballet_shoes.svg', x: 200, y: 300 },
     { src: '/assets/items/coffee.svg', x: 1000, y: 400 },
     { src: '/assets/items/headphones.svg', x: 900, y: -80 },
-    { src: '/assets/polaroids/polaroid (2).svg', x: 450, y: -80 },
+    { src: '/assets/polaroids/polaroid (2).svg', x: 600, y: -80 },
   ];
 
   return (
@@ -109,7 +109,7 @@ const HeroSection = () => {
           ))}
           {/* Main text */}
           <p className="text-3xl md:text-4xl lg:text-5xl leading-relaxed md:leading-relaxed lg:leading-relaxed relative">
-            <span className="font-['Ballet'] text-4xl md:text-5xl lg:text-6xl font-bold text-darkvoid tracking-widest">Hello, I&apos;m Jaclyn!</span>{' '}
+            <span className="font-['Ballet'] font-bold text-5xl md:text-6xl lg:text-7xl italic  text-darkvoid tracking-widest">Jaclyn Pham</span>{' '}
             <br/>
             <span className="font-['Inter'] font-light text-darkvoid"> I am a product designer (UI/UX) & creative technologist based in United States, working worldwide. I enjoy creating meaningful narratives through experimenting with new technology. </span>{' '}
             <br/>
