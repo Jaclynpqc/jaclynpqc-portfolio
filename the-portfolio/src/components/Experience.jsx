@@ -159,7 +159,7 @@ const ExperienceTimeline = () => {
   const displayedExperiences = showAll ? experiences : experiences.slice(0, 3);
 
   return (
-    <div className="max-w-8xl mx-auto p-6 bg-darkmaroon relative">
+    <div className="max-w-8xl mx-auto p-8 bg-darkmaroon relative">
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(10px); }
@@ -194,7 +194,7 @@ const ExperienceTimeline = () => {
                 onMouseEnter={() => setActiveId(index)}
                 onMouseLeave={() => setActiveId(null)}
               >
-                <div className="flex justify-between items-start mb-2">
+                <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="text-xl font-semibold text-rose-700">{exp.title}</h3>
                     <p className="text-bloodymary">{exp.company}</p>
@@ -218,28 +218,30 @@ const ExperienceTimeline = () => {
                       </li>
                     ))}
                   </ul>
+                  
                 </div>
+                
               </div>
             </div>
           ))}
         </div>
         {experiences.length > 3 && (
-          <div className="text-white hover:text-black flex justify-center absolute left-0 right-0">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="flex items-center p-3 hover:bg-white bg-darkvoid rounded-md transition-colors duration-300 shadow-md"
-              aria-label={showAll ? "Show Less" : "Show More"}
-            >
-              <p>VIEW ALL EXPERIENCE</p>
-              <ChevronDown
-                className={` transition-transform duration-300 ${
-                  showAll ? 'rotate-180' : 'rotate-0'
-                }`} 
-                size={24}
-              />
-            </button>
-          </div>
-        )}
+            <div className="text-white hover:text-black flex justify-center absolute left-0 right-0">
+              <button
+                onClick={() => setShowAll(!showAll)}
+                className="flex items-center p-3 hover:bg-white bg-darkvoid rounded-md transition-colors duration-300 shadow-md"
+                aria-label={showAll ? "Show Less" : "Show More"}
+              >
+                <p>VIEW ALL EXPERIENCE</p>
+                <ChevronDown
+                  className={` transition-transform duration-300 ${
+                    showAll ? 'rotate-180' : 'rotate-0'
+                  }`} 
+                  size={24}
+                />
+              </button>
+            </div>
+          )}
         
       </div>
     </div>

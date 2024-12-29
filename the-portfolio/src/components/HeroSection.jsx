@@ -1,14 +1,16 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useEffect, useRef, useState } from 'react';
+import SwitchFont from './SwitchFonts';
 
-const DragElem = ({src, initialX, initialY}) => {
+const DragElem = ({src, initialX, initialY, isDraggingEnabled}) => {
   const [position, setPosition] = useState({x:initialX, y:initialY});
   const [isDragging, setIsDragging]= useState(false);
-  const[dragStart, setDragStart] = useState({x:0, y:0});
+  const [dragStart, setDragStart] = useState({x:0, y:0});
   const elementRef = useRef(null);
 
   const handleMouseDown = (e) => {
+    if (!isDraggingEnabled) return;
     setIsDragging(true);
     setDragStart({
       x: e.clientX - position.x,
@@ -17,7 +19,7 @@ const DragElem = ({src, initialX, initialY}) => {
   };
 
   const handleMouseMove = (e) => {
-    if(isDragging) {
+    if(isDragging && isDraggingEnabled) {
       setPosition({
         x: e.clientX - dragStart.x,
         y: e.clientY - dragStart.y
@@ -36,13 +38,15 @@ const DragElem = ({src, initialX, initialY}) => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [isDragging]);
+  }, [isDragging, isDraggingEnabled]);
+
+  const cursorClass = isDraggingEnabled ? 'cursor-move' : 'cursor-default';
 
   return (
     <img
       ref={elementRef}
       src={src}
-      className={`absolute cursor-move w-32 h-32 scale-150 select-none transition-opacity ${isDragging ? 'opacity-80' : 'opacity-100'}`}
+      className={`absolute ${cursorClass} h-96 select-none transition-opacity rounded-sm  ${isDragging ? 'opacity-80' : 'opacity-100'}`}
       style={{
         transform: `translate(${position.x}px, ${position.y}px)`,
         zIndex: isDragging ? 50 : 1
@@ -54,70 +58,137 @@ const DragElem = ({src, initialX, initialY}) => {
   );
 }
 
-/* Add Prompt for Users */
-const DragPrompt = () => {
+const DragPrompt = ({ isDraggingEnabled }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 5000); // Hide after 5 seconds
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (!isVisible) return null;
+  if (!isVisible || !isDraggingEnabled) return null;
 
   return (
-    <div className="fixed top-10 mt-10 left-1/2 transform -translate-x-1/2 z-50 transition-opacity duration-500">
-      <div className="bg-bloodbrother border-bloodymary rounded-md shadow-lg">
-        <p className="text-lg font-[Public Sans] text-mauimist">
-          Try dragging the elements around! ✨
-        </p>
-      </div>
+    <div 
+      className="fixed top-10 mt-10 left-1/2 transform -translate-x-1/2"
+      style={{ zIndex: 150 }}
+    >
+      <SwitchFont 
+        text="DRAG THE IMAGES AROUND TO CREATE YOUR OWN COLLAGE"
+        initialFont="Redacted Script"
+        targetFont="Oswald"
+        switchLettersPerInterval={2}
+        intervalSpeed={100}
+        className="text-lg text-white"
+      />
     </div>
   );
 };
 
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
+    height: typeof window !== 'undefined' ? window.innerHeight : 0,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return windowSize;
+};
+
 const HeroSection = () => {
-  // Array of your flatlay images with their initial positions
-  const flatlayElements = [
-    { src: '/assets/items/laptop.svg', x:-100, y: 150},
-    { src: '/assets/items/glasses.svg', x: 200, y: -50 },
-    { src: '/assets/items/lipbalm.svg', x: 200, y: 100 },
-    { src: '/assets/items/digicam.svg', x: 1100, y: 150 },
-    { src: '/assets/items/clawclips.svg', x: 900, y: 290 },
-    { src: '/assets/items/ballet_shoes.svg', x: 200, y: 300 },
-    { src: '/assets/items/coffee.svg', x: 1000, y: 400 },
-    { src: '/assets/items/headphones.svg', x: 900, y: -80 },
-    { src: '/assets/polaroids/polaroid (2).svg', x: 600, y: -80 },
-  ];
+  const { width } = useWindowSize();
+  const isDraggingEnabled = width >= 768; // Enable dragging only on tablets and larger
+
+  // Responsive positions for elements
+  const getFlatlayElements = (screenWidth) => {
+    if (screenWidth >= 1280) { // Desktop
+      return [
+        { src: '/assets/hero/hobbies.svg', x: 1000, y: 200 },
+        { src: '/assets/hero/education.svg', x: 1010, y: 500 },
+        { src: '/assets/hero/experience.svg', x: 410, y: 275 },
+        { src: '/assets/polaroids/polaroid (2).svg', x: 1450, y: 350 },
+        
+      ];
+    } else if (screenWidth >= 768) { // Tablet
+      return [
+        { src: '/assets/hero/education.svg', x: -100, y: 150 },
+        { src: '/assets/hero/experience.svg', x: 200, y: -50 },
+      ];
+    } else { // Mobile
+      return [
+        { src: '/assets/hero/education.svg', x: 50, y: 100 },
+        { src: '/assets/hero/experience.svg', x: 200, y: 100 },
+      ];
+    }
+  };
+
+  const flatlayElements = getFlatlayElements(width);
 
   return (
-    <>
-      <div className="h-[60vh] relative  bg-mauimist flex items-center justify-center overflow-hidden">
-        <DragPrompt />
-        <div className="max-w-6xl mx-auto text-center relative -mb-10 mt-5">
-          {/* Flatlay Elements */}
+    <div className="relative h-screen w-full overflow-hidden">
+      {/* Base background color */}
+      <div className="absolute inset-0 bg-mauimist" />
+      
+      {/* Concrete texture background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center mix-blend-multiply"
+        style={{ backgroundImage: "url('/assets/hero/concrete4.jpeg')" }}
+      />
+      
+      {/* Content container */}
+      <div className="relative h-full">
+        {/* Shoes background image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ 
+            backgroundImage: "url('/assets/hero/shoes.svg')",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center center",
+            zIndex: 100,
+            pointerEvents: "none"
+          }}
+        />
+        <DragPrompt isDraggingEnabled={isDraggingEnabled} />
+        {/* Flatlay Elements Container */}
+        <div className="absolute inset-0" style={{zIndex: 50}}>
           {flatlayElements.map((element, index) => (
             <DragElem
               key={index}
               src={element.src}
               initialX={element.x}
               initialY={element.y}
+              isDraggingEnabled={isDraggingEnabled}
             />
           ))}
-          {/* Main text */}
-          <p className="text-3xl md:text-4xl lg:text-5xl leading-relaxed md:leading-relaxed lg:leading-relaxed relative">
-            <span className="font-['Ballet'] font-bold text-5xl md:text-6xl lg:text-7xl italic  text-darkvoid tracking-widest">Jaclyn Pham</span>{' '}
-            <br/>
-            <span className="font-['Inter'] font-light text-darkvoid"> I am a product designer (UI/UX) & creative technologist based in United States, working worldwide. I enjoy creating meaningful narratives through experimenting with new technology. </span>{' '}
-            <br/>
-            <span className="font-['Inter'] font-extralight text-2xl md:text-3xl lg:text-4xl text-bloodymary">Contact me at jaclynpqc@gmail.com</span>{' '}
+        </div>
+        
+        {/* Main text - responsive positioning */}
+        <div className={`absolute max-w-5xl text-left ${width >= 768 ? 'bottom-16 left-16' : 'top-16 left-8'}`}>
+          <p className="space-y-5">
+            <span className="block font-['Inter'] font-black text-6xl leading-tight tracking-wide text-mauimist">
+              HI, I&apos;M JACLYN. I DESIGN EXPERIENCES THAT INSPIRED CONNECTION AND ELEVATE MINDFULNESS.
+            </span>
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

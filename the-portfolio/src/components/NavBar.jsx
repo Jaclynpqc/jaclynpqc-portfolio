@@ -47,11 +47,12 @@ export default function NavigationBar({ fontStyle = 'Iter', onNavigate }) {
     }
   };
   const navItems = [
+    { text: 'ABOUT', href: '#about', id: 'about' },
+    { text: 'EXPERIENCE', href: '#experience', id: 'experience' },
     { text: 'WORK', href: '#work', id: 'work' },
     { text: 'SKILLS', href: '#skills', id: 'skills' },
-    { text: 'EXPERIENCE', href: '#experience', id: 'experience' },
-    { text: 'CV', href: 'https://drive.google.com/file/d/17FkvLZf7mpQ_fKpLMUTu8AA8udupfZJ1/view?usp=sharing', id: 'cv' },
-    { text: 'CONTACT', href: '#contact', id: 'contact' }
+    { text: 'CONTACT', href: '#contact', id: 'contact' },
+    { text: 'CV', href: '#contact', id: 'cv'  },
   ];
 
   return (
