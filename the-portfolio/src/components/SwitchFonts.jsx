@@ -63,7 +63,7 @@ const SwitchFont = ({
           style={{ 
             fontFamily: char.font,
             display: 'inline-block',
-            visibility: char.isSpace ? 'hidden' : 'visible', // Hide the [] marker
+            visibility: char.isSpace ? 'hidden' : 'visible', 
             marginRight: char.isSpace ? '0.25em' : '0' // Add space width when it's a space
           }}
         >

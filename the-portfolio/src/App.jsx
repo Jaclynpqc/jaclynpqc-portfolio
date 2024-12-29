@@ -23,11 +23,8 @@ const Home = () => {
     <>
       <NavigationBar onNavigate={scrollToSection} />
       <main>
-        <section id="hero">
+        <section id="about">
           <HeroSection />
-        </section>
-        <section id="experience" className="scroll-mt-20">
-          <ExperienceTimeline />
         </section>
         <section id="skills" className="scroll-mt-20">
           <Skills />
@@ -35,9 +32,8 @@ const Home = () => {
         <section id="work" className="scroll-mt-20">
           <Projects />
         </section>
-
-        <section id = "aboutMe" className = "scroll-mt-20">
-          <AboutMe />
+        <section id="experience" className="scroll-mt-20">
+          <ExperienceTimeline />
         </section>
         <section id="contact" className="scroll-mt-20">
           <Footer />

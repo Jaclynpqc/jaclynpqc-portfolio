@@ -58,35 +58,41 @@ const DragElem = ({src, initialX, initialY, isDraggingEnabled}) => {
   );
 }
 
-const DragPrompt = ({ isDraggingEnabled }) => {
+const DragPrompt = ({ isDraggingEnabled, screenWidth }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 5000);
+    }, 10000);
 
     return () => clearTimeout(timer);
   }, []);
 
   if (!isVisible || !isDraggingEnabled) return null;
 
+  // Responsive positioning classes
+  const positionClasses = screenWidth >= 768
+    ? "top-20 right-20" // Desktop/large screens: bottom right
+    : "top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"; // Mobile/tablet: center
+
   return (
     <div 
-      className="fixed top-10 mt-10 left-1/2 transform -translate-x-1/2"
+      className={`fixed ${positionClasses} transition-opacity duration-500`}
       style={{ zIndex: 150 }}
     >
       <SwitchFont 
-        text="DRAG THE IMAGES AROUND TO CREATE YOUR OWN COLLAGE"
+        text="drag the images to create a collage"
         initialFont="Redacted Script"
         targetFont="Oswald"
-        switchLettersPerInterval={2}
+        switchLettersPerInterval={2}   
         intervalSpeed={100}
-        className="text-lg text-white"
+        className="text-3xl text-gray-200"
       />
     </div>
   );
 };
+
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
@@ -122,7 +128,7 @@ const HeroSection = () => {
         { src: '/assets/hero/hobbies.svg', x: 1000, y: 200 },
         { src: '/assets/hero/education.svg', x: 1010, y: 500 },
         { src: '/assets/hero/experience.svg', x: 410, y: 275 },
-        { src: '/assets/polaroids/polaroid (2).svg', x: 1450, y: 350 },
+        { src: '/assets/polaroids/polaroid3.svg', x:-30, y: 275 },
         
       ];
     } else if (screenWidth >= 768) { // Tablet
@@ -155,17 +161,18 @@ const HeroSection = () => {
       <div className="relative h-full">
         {/* Shoes background image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center scale-75"
           style={{ 
             backgroundImage: "url('/assets/hero/shoes.svg')",
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center center",
+            backgroundPosition: "top center",
+            transformOrigin: "top center",
             zIndex: 100,
             pointerEvents: "none"
           }}
         />
-        <DragPrompt isDraggingEnabled={isDraggingEnabled} />
+        <DragPrompt isDraggingEnabled={isDraggingEnabled} screenWidth={width} />
         {/* Flatlay Elements Container */}
         <div className="absolute inset-0" style={{zIndex: 50}}>
           {flatlayElements.map((element, index) => (
@@ -180,6 +187,7 @@ const HeroSection = () => {
         </div>
         
         {/* Main text - responsive positioning */}
+
         <div className={`absolute max-w-5xl text-left ${width >= 768 ? 'bottom-16 left-16' : 'top-16 left-8'}`}>
           <p className="space-y-5">
             <span className="block font-['Inter'] font-black text-6xl leading-tight tracking-wide text-mauimist">
