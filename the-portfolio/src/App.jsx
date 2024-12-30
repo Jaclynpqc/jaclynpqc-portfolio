@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavigationBar from './components/NavBar';
 import HeroSection from './components/HeroSection';
 import ProjectsSection from './components/HoverProjects';
-import ProjectsSection from './components/HoverProjects';
 import Skills from './components/ReceiptSkills';
 import Footer from './components/Footer';
 import NotFound from './components/404';
