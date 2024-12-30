@@ -2,14 +2,12 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 
-export default function NavigationBar({ fontStyle = 'Iter', onNavigate }) {
+export default function NavigationBar({ fontStyle = 'Inter', onNavigate }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
   const fontStyles = {
-    inter: "font-['Inter']",
-    spaceGrotesk: "font-['Space_Grotesk']",
-    outfit: "font-['Outfit']"
+    inter: "font-['Inter']"
   };
 
   useEffect(() => {
@@ -47,19 +45,25 @@ export default function NavigationBar({ fontStyle = 'Iter', onNavigate }) {
     }
   };
   const navItems = [
+    { text: 'PROJECTS', href: '#projects', id: 'projects' },
     { text: 'ABOUT', href: '#about', id: 'about' },
-    { text: 'EXPERIENCE', href: '#experience', id: 'experience' },
-    { text: 'WORK', href: '#work', id: 'work' },
-    { text: 'SKILLS', href: '#skills', id: 'skills' },
-    { text: 'CONTACT', href: '#contact', id: 'contact' },
-    { text: 'CV', href: '#contact', id: 'cv'  },
+    { text: 'RESUME', href: '#resume', id: 'resume' },
   ];
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 transition-all w-full duration-300 z-50 
-      ${isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'}
+      ${isScrolled ? '' : 'bg-transparent'}
       ${fontStyles[fontStyle]}`}
+      style={
+        isScrolled
+          ? {
+              backgroundImage: `url('/assets/hero/concrete4.jpeg')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }
+          : undefined
+      }
     >
       <div className="w-full bg-inherit">
         <div className="max-w-8xl mx-auto px-6">
@@ -67,7 +71,7 @@ export default function NavigationBar({ fontStyle = 'Iter', onNavigate }) {
             <a 
               href="/"
               onClick={(e) => handleNavClick(e, 'hero')}
-              className={`font-medium text-xl tracking-tight hover:text-gray-600 transition-colors
+              className={`font-medium text-xl tracking-tight text-white hover:text-bluestone transition-colors
               ${fontStyle === 'inter' ? 'tracking-[-0.02em]' : 'tracking-normal'}`}
             >
               JACLYN PHAM
@@ -80,12 +84,12 @@ export default function NavigationBar({ fontStyle = 'Iter', onNavigate }) {
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.id)}
                   className={`text-sm tracking-wide transition-colors relative group
-                    ${activeSection === item.id ? 'text-black' : 'text-gray-600'}
+                    ${activeSection === item.id ? 'text-mauimist' : 'text-bluestone'}
                     ${fontStyle === 'inter' ? 'tracking-[0.02em]' : 'tracking-[0.03em]'}`}
                 >
                   {item.text}
                   <span 
-                    className={`absolute inset-x-0 bottom-0 h-0.5 bg-black transform transition-transform origin-left
+                    className={`absolute inset-x-0 bottom-0 h-0.5 bg-white transform transition-transform origin-left
                     ${activeSection === item.id ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
                   ></span>
                 </a>
