@@ -4,11 +4,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavigationBar from './components/NavBar';
 import HeroSection from './components/HeroSection';
 import ProjectsSection from './components/HoverProjects';
+import ProjectsSection from './components/HoverProjects';
 import Skills from './components/ReceiptSkills';
 import Footer from './components/Footer';
 import NotFound from './components/404';
 import AboutMe from './components/AboutMe';
 import ExperienceTimeline from './components/Experience';
+import BrutalistResume from './components/DraftResume';
 
 // Main content
 const Home = () => {
@@ -23,16 +25,16 @@ const Home = () => {
     <>
       <NavigationBar onNavigate={scrollToSection} />
       <main>
-        <section id="about">
+        <section >
           <HeroSection />
         </section>
         <section id="projects" className="scroll-mt-20">
           <ProjectsSection />
         </section>
-        <section id="experience" className="scroll-mt-20">
-          <ExperienceTimeline />
+        <section id="resume" className="scroll-mt-20">
+          <Skills />
         </section>
-        <section id="contact" className="scroll-mt-20">
+        <section >
           <Footer />
         </section>
       </main>

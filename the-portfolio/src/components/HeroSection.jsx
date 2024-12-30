@@ -163,13 +163,37 @@ const HeroSection = () => {
       ];
     } else if (screenWidth >= 768) { // Tablet
       return [
-        { src: '/assets/hero/education.svg', x: -100, y: 150 },
-        { src: '/assets/hero/experience.svg', x: 200, y: -50 },
+        { src: '/assets/hero/education.svg', x: 50, y: 150 },
+        { src: '/assets/hero/experience.svg', x: 250, y: 100 },
+        { src: '/assets/polaroids/polaroid3.svg', x: -50, y: 250 },
+        // Positions
+        { component: 'sticker', text: 'UI/UX', x: 200, y: 400 },
+        { component: 'sticker', text: 'Web Developer', x: 200, y: 450 },
+        { component: 'sticker', text: 'Design & Engineering', x: 60, y: 550 },
+        // Skills
+        { component: 'sticker', text: 'HTML/CSS/JavaScript', x: 700, y: 600 },
+        { component: 'sticker', text: 'Figma/Adobe Creative Suite', x: 500, y: 600 },
+        { component: 'sticker', text: 'TouchDesigner', x: 500, y: 650 },
+        { component: 'sticker', text: 'Python', x: 650, y: 650 },
+        { component: 'sticker', text: 'Design Thinking', x: 700, y: 650 },
+        { component: 'sticker', text: 'Empathy', x: 850, y: 650 },
       ];
     } else { // Mobile
       return [
         { src: '/assets/hero/education.svg', x: 50, y: 100 },
-        { src: '/assets/hero/experience.svg', x: 200, y: 100 },
+        { src: '/assets/hero/experience.svg', x: 200, y: 150 },
+        { src: '/assets/polaroids/polaroid3.svg', x: -50, y: 250 },
+        // Positions
+        { component: 'sticker', text: 'UI/UX', x: 100, y: 350 },
+        { component: 'sticker', text: 'Web Developer', x: 100, y: 400 },
+        { component: 'sticker', text: 'Design & Engineering', x: 30, y: 500 },
+        // Skills
+        { component: 'sticker', text: 'HTML/CSS/JavaScript', x: 400, y: 600 },
+        { component: 'sticker', text: 'Figma/Adobe Creative Suite', x: 300, y: 600 },
+        { component: 'sticker', text: 'TouchDesigner', x: 300, y: 650 },
+        { component: 'sticker', text: 'Python', x: 450, y: 650 },
+        { component: 'sticker', text: 'Design Thinking', x: 500, y: 650 },
+        { component: 'sticker', text: 'Empathy', x: 600, y: 650 },
       ];
     }
   };
