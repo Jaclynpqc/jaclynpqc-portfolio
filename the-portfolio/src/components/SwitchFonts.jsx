@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const SwitchFont = ({ 
   text, 
@@ -10,25 +11,48 @@ const SwitchFont = ({
   intervalSpeed = 100,
   className = ""
 }) => {
-  // Initialize characters array with special handling for spaces
   const [characters, setCharacters] = useState(
     text.split('').map(char => ({
-      char: char === ' ' ? '[]' : char, // Mark spaces with []
+      char: char === ' ' ? '[]' : char, 
       font: initialFont,
       switched: false,
-      isSpace: char === ' ' // Track if this character is a space
+      isSpace: char === ' '
     }))
   );
 
+  const [isTriggered, setIsTriggered] = useState(false); // Track if animation has started
+  const elementRef = useRef(null);
+
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsTriggered(true); 
+          observer.disconnect(); 
+        }
+      },
+      { threshold: 0.5 } 
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isTriggered) return;
+
     let unswitchedIndices = characters
-      .map((char, index) => (!char.switched && !char.isSpace) ? index : -1) // Exclude spaces from switching
+      .map((char, index) => (!char.switched && !char.isSpace ? index : -1))
       .filter(index => index !== -1);
 
     if (unswitchedIndices.length === 0) return;
 
     const intervalId = setInterval(() => {
-      // Get random indices that haven't been switched yet
       const indicesToSwitch = [];
       for (let i = 0; i < Math.min(switchLettersPerInterval, unswitchedIndices.length); i++) {
         const randomIndex = Math.floor(Math.random() * unswitchedIndices.length);
@@ -36,7 +60,6 @@ const SwitchFont = ({
         unswitchedIndices.splice(randomIndex, 1);
       }
 
-      // Update characters with new fonts
       setCharacters(prevChars => 
         prevChars.map((char, index) => 
           indicesToSwitch.includes(index)
@@ -45,17 +68,16 @@ const SwitchFont = ({
         )
       );
 
-      // Clear interval if all non-space characters have been switched
       if (unswitchedIndices.length === 0) {
         clearInterval(intervalId);
       }
     }, intervalSpeed);
 
     return () => clearInterval(intervalId);
-  }, []); // Empty dependency array since we want this to run once
+  }, [isTriggered]);
 
   return (
-    <span className={className}>
+    <span ref={elementRef} className={className}>
       {characters.map((char, index) => (
         <span
           key={index}
@@ -64,7 +86,7 @@ const SwitchFont = ({
             fontFamily: char.font,
             display: 'inline-block',
             visibility: char.isSpace ? 'hidden' : 'visible', 
-            marginRight: char.isSpace ? '0.25em' : '0' // Add space width when it's a space
+            marginRight: char.isSpace ? '0.01em' : '0' 
           }}
         >
           {char.char}

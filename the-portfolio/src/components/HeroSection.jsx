@@ -2,8 +2,9 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useRef, useState } from 'react';
 import SwitchFont from './SwitchFonts';
+import Sticker from './Sticker';
 
-const DragElem = ({src, initialX, initialY, isDraggingEnabled}) => {
+const DragElem = ({children, src, initialX, initialY, isDraggingEnabled}) => {
   const [position, setPosition] = useState({x:initialX, y:initialY});
   const [isDragging, setIsDragging]= useState(false);
   const [dragStart, setDragStart] = useState({x:0, y:0});
@@ -42,21 +43,37 @@ const DragElem = ({src, initialX, initialY, isDraggingEnabled}) => {
 
   const cursorClass = isDraggingEnabled ? 'cursor-move' : 'cursor-default';
 
+  if (src) {
+    return (
+      <img
+        ref={elementRef}
+        src={src}
+        className={`absolute ${cursorClass} h-96 select-none transition-opacity rounded-sm ${isDragging ? 'opacity-80' : 'opacity-100'}`}
+        style={{
+          transform: `translate(${position.x}px, ${position.y}px)`,
+          zIndex: isDragging ? 50 : 1
+        }}
+        onMouseDown={handleMouseDown}
+        alt="Draggable element"
+        draggable="false"
+      />
+    );
+  }
+
   return (
-    <img
+    <div
       ref={elementRef}
-      src={src}
-      className={`absolute ${cursorClass} h-96 select-none transition-opacity rounded-sm  ${isDragging ? 'opacity-80' : 'opacity-100'}`}
+      className={`absolute ${cursorClass} select-none transition-opacity ${isDragging ? 'opacity-80' : 'opacity-100'}`}
       style={{
         transform: `translate(${position.x}px, ${position.y}px)`,
         zIndex: isDragging ? 50 : 1
       }}
       onMouseDown={handleMouseDown}
-      alt="Draggable element"
-      draggable="false"
-    />
+    >
+      {children}
+    </div>
   );
-}
+};
 
 const DragPrompt = ({ isDraggingEnabled, screenWidth }) => {
   const [isVisible, setIsVisible] = useState(true);
@@ -64,7 +81,7 @@ const DragPrompt = ({ isDraggingEnabled, screenWidth }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 10000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -82,12 +99,12 @@ const DragPrompt = ({ isDraggingEnabled, screenWidth }) => {
       style={{ zIndex: 150 }}
     >
       <SwitchFont 
-        text="drag the images to create a collage"
+        text="[drag and drop elements to create a collage]"
         initialFont="Redacted Script"
         targetFont="Oswald"
-        switchLettersPerInterval={2}   
+        switchLettersPerInterval={5}   
         intervalSpeed={100}
-        className="text-3xl text-gray-200"
+        className="text-3xl text-white"
       />
     </div>
   );
@@ -126,9 +143,22 @@ const HeroSection = () => {
     if (screenWidth >= 1280) { // Desktop
       return [
         { src: '/assets/hero/hobbies.svg', x: 1000, y: 200 },
-        { src: '/assets/hero/education.svg', x: 1010, y: 500 },
-        { src: '/assets/hero/experience.svg', x: 410, y: 275 },
-        { src: '/assets/polaroids/polaroid3.svg', x:-30, y: 275 },
+      { src: '/assets/hero/education.svg', x: 1010, y: 500 },
+      { src: '/assets/hero/experience.svg', x: 410, y: 275 },
+      //Me
+      { src: '/assets/polaroids/polaroid3.svg', x:-30, y: 275 },
+      // Positions
+      { component: 'sticker', text: 'UI/UX', x: 500, y: 150 },
+      { component: 'sticker', text: 'Web Developer', x: 500, y: 200 },
+      { component: 'sticker', text: 'Design & Engineering', x: 60, y: 650 },
+      //Skills
+      
+      { component: 'sticker', text: 'HTML/CSS/JavaScript', x: 1400, y: 900 },
+      { component: 'sticker', text: 'Figma/Adobe Creative Suite', x: 1000, y: 900 },
+      { component: 'sticker', text: 'TouchDesigner', x: 1000, y: 950 },
+      { component: 'sticker', text: 'Python', x: 1250, y: 950 },
+      { component: 'sticker', text: 'Design Thinking', x: 1400, y: 950 },
+      { component: 'sticker', text: 'Empathy', x: 1650, y: 950 },
         
       ];
     } else if (screenWidth >= 768) { // Tablet
@@ -175,23 +205,45 @@ const HeroSection = () => {
         <DragPrompt isDraggingEnabled={isDraggingEnabled} screenWidth={width} />
         {/* Flatlay Elements Container */}
         <div className="absolute inset-0" style={{zIndex: 50}}>
-          {flatlayElements.map((element, index) => (
-            <DragElem
-              key={index}
-              src={element.src}
-              initialX={element.x}
-              initialY={element.y}
-              isDraggingEnabled={isDraggingEnabled}
-            />
-          ))}
+          {flatlayElements.map((element, index) => {
+            if (element.component === 'sticker') {
+              return (
+                <DragElem
+                  key={index}
+                  initialX={element.x}
+                  initialY={element.y}
+                  isDraggingEnabled={isDraggingEnabled}
+                >
+                  <Sticker 
+                    text={element.text}
+                    fontSize="text-3xl"
+                    fontFamily="font-['Inter']"
+                    textColor='white'
+                    backgroundColor='transparent'
+                    outlineColor='white'
+                  />
+                </DragElem>
+              );
+            }
+            
+            return (
+              <DragElem
+                key={index}
+                src={element.src}
+                initialX={element.x}
+                initialY={element.y}
+                isDraggingEnabled={isDraggingEnabled}
+              />
+            );
+          })}
         </div>
         
         {/* Main text - responsive positioning */}
 
-        <div className={`absolute max-w-5xl text-left ${width >= 768 ? 'bottom-16 left-16' : 'top-16 left-8'}`}>
+        <div className={`absolute  max-w-5xl text-left ${width >= 768 ? 'bottom-16 left-16' : 'top-16 left-8'}`}>
           <p className="space-y-5">
-            <span className="block font-['Inter'] font-black text-6xl leading-tight tracking-wide text-mauimist">
-              HI, I&apos;M JACLYN. I DESIGN EXPERIENCES THAT INSPIRED CONNECTION AND ELEVATE MINDFULNESS.
+            <span className="block font-['Inter'] font-black lg:text-6xl sm:text-4xl md:text-5xl leading-tight tracking-wide text-mauimist">
+              HI, I&apos;M JACLYN. I CREATE EXPERIENCES THAT INSPIRE CONNECTION AND ELEVATE MINDFULNESS.
             </span>
           </p>
         </div>

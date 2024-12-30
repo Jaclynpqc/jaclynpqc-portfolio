@@ -45,10 +45,9 @@ export default function NavigationBar({ fontStyle = 'Inter', onNavigate }) {
     }
   };
   const navItems = [
-    { text: 'WORK', href: '#work', id: 'work' },
+    { text: 'PROJECTS', href: '#projects', id: 'projects' },
     { text: 'ABOUT', href: '#about', id: 'about' },
-    { text: 'EXPERIENCE', href: '#experience', id: 'experience' },
-    { text: 'CONTACT', href: '#contact', id: 'contact' },
+    { text: 'RESUME', href: '#resume', id: 'resume' },
   ];
 
   return (
