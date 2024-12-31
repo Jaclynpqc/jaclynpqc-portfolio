@@ -1,8 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import SwitchFont from './SwitchFonts';
+import React, { useState } from 'react';
+import SwitchFont from './SwitchFonts';
 
 const Skills = () => {
+  const [purchasedSkills, setPurchasedSkills] = useState([]);
   const [purchasedSkills, setPurchasedSkills] = useState([]);
 
   const skills = [
@@ -90,7 +93,97 @@ const Skills = () => {
       ]
     }
   ];
+  const skills = [
+    {
+      category: 'THE DESIGNER',
+      items: [
+        {
+          name: 'Figma',
+          image: '/assets/skills/figma.svg'
+        },
+        {
+          name: 'Adobe Illustrator',
+          image: '/assets/skills/adobeAI.png'
+        },
+        {
+          name: 'Adobe InDesign',
+          image: '/assets/skills/adobe-indesign.svg'
+        },
+        {
+          name: 'Adobe After Effects',
+          image: '/assets/skills/adobeAfterEffects.png'
+        },
+        {
+          name: 'Adobe Premiere Pro',
+          image: '/assets/skills/adobe-premiere-pro.svg'
+        },
+        {
+          name: 'TouchDesigner',
+          image: '/assets/skills/touchdesigner.webp'
+        },
+      ]
+    },
+    {
+      category: 'THE DEVELOPER',
+      items: [
+        {
+          name: 'HTML5',
+          image: '/assets/skills/html5.svg'
+        },
+        {
+          name: 'CSS',
+          image: '/assets/skills/css.svg'
+        },
+        {
+          name: 'JavaScript',
+          image: '/assets/skills/javascript.svg'
+        },
+        {
+          name: 'React',
+          image: '/assets/skills/react.svg'
+        },
+        {
+          name: 'TailwindCSS',
+          image: '/assets/skills/tailwind.svg'
+        },
+        {
+          name: 'WordPress',
+          image: '/assets/skills/wordpress.svg'
+        }
+      ]
+    },
+    {
+      category: 'THE PROGRAMMER',
+      items: [
+        {
+          name: 'Python',
+          image: '/assets/skills/python.svg'
+        },
+        {
+          name: 'C',
+          image: '/assets/skills/c.svg'
+        },
+        {
+          name: 'Java',
+          image: '/assets/skills/java.svg'
+        },
+        {
+          name: 'scikit-learn',
+          image: '/assets/skills/scikitlearn.webp'
+        },
+        {
+          name: 'SQL',
+          image: '/assets/skills/sql.svg'
+        }
+      ]
+    }
+  ];
 
+  const handleSkillClick = (skillName) => {
+    if (!purchasedSkills.includes(skillName)) {
+      setPurchasedSkills([...purchasedSkills, skillName]);
+    }
+  };
   const handleSkillClick = (skillName) => {
     if (!purchasedSkills.includes(skillName)) {
       setPurchasedSkills([...purchasedSkills, skillName]);
