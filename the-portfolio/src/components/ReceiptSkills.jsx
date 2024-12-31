@@ -102,96 +102,105 @@ const Skills = () => {
   }
 
   return (
-    <div className="relative min-h-[50vh]">
-      {/* Background Layer */}
-      <div className="absolute max-w-8xl inset-0 bg-stone-50 opacity-90">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-[url('/assets/bluegradient.gif')] bg-cover bg-center mix-blend-multiply" />
-      </div>
-
-      {/* Content Layer */}
-      <div className="relative z-10 container mx-auto px-4 py-2">
-        {/* Page Header */}
-        <div className="relative text-left overflow-hidden mb-16 mt-24 px-8">
-          <SwitchFont
-            text="WHAT ARE YOU LOOKING FOR IN ME?"
-            initialFont="Tiny5"
-            targetFont="Inter"
-            switchLettersPerInterval={4}
-            intervalSpeed={100}
-            className="sm:text-3xl md:text-4xl block lg:text-5xl text-white font-regular leading-tight"
-          />
+    <div className="relative h-[50vh]"> {/* Fixed height to 50vh */}
+      {/* Background Layers */}
+      <div className="absolute inset-0 bg-black/90">
+        {/* Grid Layer */}
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:24px_24px]" />
+        
+        {/* Background Image with Blur */}
+        <div className="absolute inset-0 bg-[url('/assets/bluegradient.gif')] bg-cover bg-center mix-blend-screen opacity-50 backdrop-blur-[100px]" />
+        
+        {/* Grain Overlay */}
+        <div className="absolute inset-0 opacity-50 mix-blend-overlay">
+          <div className="w-full h-full bg-[url('/assets/noise.png')] bg-repeat" />
         </div>
-
-        {/* Main Content */}
-        <div className="flex flex-col lg:flex-row gap-12">
-          {/* Skills Section */}
-          <div className="flex-1 text-left">
-            {skills.map((category) => (
-              <div key={category.category} className="mb-10">
-                <div className="mb-6">
-                  <h2 className="text-2xl font-[Inter] font-bold text-darkmaroon mb-2">{category.category}</h2>
-                </div>
-                <div className="flex flex-wrap gap-6">
-                  {category.items.map((skill) => (
-                    <button
-                      key={skill.name}
-                      onClick={() => handleSkillClick(skill.name)}
-                      className="w-20 h-20 rounded-lg flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-105 shadow-md"
-                    >
-                      <img
-                        src={skill.image}
-                        alt={skill.name}
-                        className="w-12 h-12 object-contain scale-125"
-                      />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Receipt Section */}
-          <div className="relative w-full lg:w-96">
-            {/* Receipt Texture Layer */}
-            <div className="absolute inset-0">
-              {/* Add paper texture*/}
-              <div className="absolute inset-0 bg-cover bg-center opacity-100" />
-            </div>
-
-            {/* Receipt Content */}
-            <div className="relative backdrop-blur-sm shadow-lg rounded-lg">e
-              <div className="p-5">
-                <div className="font-['VT323'] text-gray-800">
-                  <h2 className="text-3xl font-bold mb-4 text-center">RECEIPT</h2>
-                  <p className="text-lg mb-6 text-center">
-                    Thank you for purchasing at Jaclyn Pham. Satisfaction guarateed!
-                  </p>
-                  <div className="border-t-2 border-b-2 border-gray-300 py-4">
-                    <div className="flex justify-between mb-4">
-                      <span className="text-xl">Item</span>
-                      <span className="text-xl">Quantity</span>
-                    </div>
-                    {purchasedSkills.length === 0 ? (
-                      <p className="text-center text-gray-500 py-4">
-                        Click on skills to add them to your receipt
-                      </p>
-                    ) : (
-                      purchasedSkills.map((skill) => (
-                        <div key={skill} className="flex justify-between text-lg">
-                          <span>{skill}</span>
-                          <span>1</span>
-                        </div>
-                      ))
-                    )}
+      </div>
+  
+      {/* Content Layer */}
+      <div className="relative z-10">
+        {/* Page Header */}
+        <div className="relative w-screen py-4 backdrop-blur-sm">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-black font-mono tracking-tight text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.7)] [text-stroke:1px_rgba(255,255,255,0.7)] p-0 mix-blend-difference backdrop-blur-sm"> {/* Reduced size */}
+            HOW CAN I CONTRIBUTE TO YOUR PROJECT?
+          </h1>
+        </div>
+  
+        <div className="relative z-10 container mx-auto px-4 mt-6"> 
+          {/* Main Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
+            {/* Skills Section */}
+            <div className="text-left">
+              {skills.map((category) => (
+                <div key={category.category} className="mb-8 border-l border-white/20 pl-4"> 
+                  <div className="mb-4">
+                    <SwitchFont
+                      text={category.category}
+                      initialFont="Redacted Script"
+                      targetFont="Inter"
+                      switchLettersPerInterval={4}
+                      intervalSpeed={100}
+                      className="text-1xl md:text-2xl text-white/80 font-thin leading-none backdrop-blur-sm" 
+                    />
                   </div>
-                  <p className="text-lg mb-6 text-center">
+                  <div className="flex flex-wrap gap-2"> {/* Changed to flex-wrap with smaller gap */}
+                    {category.items.map((skill) => (
+                      <button
+                        key={skill.name}
+                        onClick={() => handleSkillClick(skill.name)}
+                        className="w-14 h-14 bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-sm flex items-center justify-center transition-all hover:scale-105" 
+                      >
+                        <img
+                          src={skill.image}
+                          alt={skill.name}
+                          className="w-8 h-8 object-contain filter invert opacity-70" 
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+  
+            {/* Receipt Section */}
+            <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 h-full"> {/* Added h-full */}
+              <div className="p-4">
+                <div className="font-['Poppins'] text-white/80">
+                  <h2 className="text-xl font-bold mb-2">RECEIPT</h2> 
+                  <p className="text-xs mb-2"> 
+                    Thank you for purchasing at Jaclyn Pham. Satisfaction guaranteed!
+                  </p>
+                  <div className="border-y border-white/50 py-2"> 
+                    <div className="flex justify-between mb-2">
+                      <span className="text-sm">Item</span> 
+                      <span className="text-sm">Qty</span>
+                    </div>
+                    
+                    {/* Scrollable items area */}
+                    <div className="h-[calc(50vh-200px)] overflow-y-auto scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-white/30">
+                      {purchasedSkills.length === 0 ? (
+                        <p className="text-center text-white/50 py-2 text-xs"> 
+                          Click on skills to add them to your receipt
+                        </p>
+                      ) : (
+                        <div className="grid grid-cols-2 gap-2"> 
+                          {purchasedSkills.map((skill) => (
+                            <div key={skill} className="text-xs flex justify-between bg-white/5 p-1"> {/* Reduced text and padding */}
+                              <span className="truncate mr-1">{skill}</span>
+                              <span>1</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <p className="text-xs my-2"> {/* Reduced from text-xl */}
                     Thank you for considering my skills!
                   </p>
                   {purchasedSkills.length > 0 && (
                     <button
                       onClick={handleClearReceipt}
-                      className="mt-6 w-full py-2 px-4 bg-purpletulip text-white rounded-md hover:bg-bordeaux transition-colors duration-300 font-[Karla]"
+                      className="w-full py-2 bg-white/10 text-white/80 text-xs hover:bg-white/20 transition-colors" 
                     >
                       Clear Receipt
                     </button>
@@ -205,5 +214,4 @@ const Skills = () => {
     </div>
   );
 };
-
 export default Skills;
