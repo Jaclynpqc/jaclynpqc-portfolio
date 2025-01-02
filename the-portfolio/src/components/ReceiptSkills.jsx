@@ -113,7 +113,7 @@ const Skills = () => {
         
         {/* Grain Overlay */}
         <div className="absolute inset-0 opacity-50 mix-blend-overlay">
-          <div className="w-full h-full bg-[url('/assets/noise.png')] bg-repeat" />
+          <div className="w-full h-full bg-[url('/assets/bluegradient.gif')] bg-repeat" />
         </div>
       </div>
   
