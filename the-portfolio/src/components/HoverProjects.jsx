@@ -127,24 +127,34 @@ const BrutalistProjectsSection = () => {
 
   const installationProjects = [
     {
-      year: "2022",
+      year: "2024",
       brand: "MUJI",
       role: "Interaction Designer",
       title: "From Brushstroke to Keystroke",
       description: "Interactive installation exploring the evolution of written communication.",
       category: "Installation",
       image: "/assets/projects/Muji.svg",
-      link: "https://jaclyn-pham.notion.site/The-Typewriter-Piano",
+      link: "https://www.jaclynpham.com/muji",
     },
     {
-      year: "2022",
+      year: "2024",
+      brand: "Waiting for Coffee can be Fun",
+      role: "Software Engineering",
+      title: "Quarto AI",
+      description: "An interactive AI game for coffee shops and bakeries that turns wait time into a fun, social experience. Connects customers together and adds entertainment while waiting for orders, making the wait less boring and more engaging.",
+      category: "Artificial Intelligence",
+      image: "/assets/projects/Quarto Bakery Layout.svg",
+      link: "https://github.com/Jaclynpqc/quarto-ai",
+    },
+    {
+      year: "2023",
       brand: "TEAMLAB",
       role: "Installation Designer",
       title: "Edenia",
       description: "Immersive projection mapping installation merging art and technology.",
       category: "Installation",
       image: "/assets/projects/Edenia_default.gif",
-      link: "https://jaclyn-pham.notion.site/Edenia",
+      link: "https://www.jaclynpham.com/marshall",
     },
   ];
 
