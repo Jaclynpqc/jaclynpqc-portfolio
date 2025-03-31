@@ -10,7 +10,8 @@ import NotFound from './components/404';
 import AboutMe from './components/AboutMe';
 import ExperienceTimeline from './components/Experience';
 import BrutalistResume from './components/DraftResume';
-
+import ARHome
+ from './components/ARHero';
 // Main content
 const Home = () => {
   const scrollToSection = (sectionId) => {
@@ -25,7 +26,7 @@ const Home = () => {
       <NavigationBar onNavigate={scrollToSection} />
       <main>
         <section >
-          <HeroSection />
+          <ARHome />
         </section>
         <section id="projects" className="scroll-mt-20">
           <ProjectsSection />
