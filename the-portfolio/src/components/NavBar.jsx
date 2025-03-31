@@ -47,7 +47,8 @@ export default function NavigationBar({ fontStyle = 'Inter', onNavigate }) {
   const navItems = [
     { text: 'PROJECTS', href: '#projects', id: 'projects' },
     { text: 'ABOUT', href: '#about', id: 'about' },
-    { text: 'RESUME', href: '#resume', id: 'resume' },
+    { text: 'SKILLS', href: '#skills', id: 'skills' },
+    { text: 'RESUME', href: 'https://www.jaclynpham.com/resume', id: 'resume' },
   ];
 
   return (

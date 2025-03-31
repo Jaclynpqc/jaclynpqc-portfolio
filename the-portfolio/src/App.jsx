@@ -27,10 +27,10 @@ const Home = () => {
         <section >
           <HeroSection />
         </section>
-        <section id="projects" className="scroll-mt-20">
+        <section id="project" className="scroll-mt-20">
           <ProjectsSection />
         </section>
-        <section id="resume" className="scroll-mt-20">
+        <section id="skills" className="scroll-mt-20">
           <Skills />
         </section>
         <section >
