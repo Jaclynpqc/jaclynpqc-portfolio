@@ -15,7 +15,7 @@ export default function NavigationBar({ fontStyle = 'Inter', onNavigate }) {
       setIsScrolled(window.scrollY > 0);
       
       // Determine which section is currently in view
-      const sections = ['hero', 'work', 'skills','experience', 'contact'];
+      const sections = ['projects', 'skills', 'experience', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -36,19 +36,24 @@ export default function NavigationBar({ fontStyle = 'Inter', onNavigate }) {
 
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
-    if (sectionId === 'cv') {
+    if (sectionId === 'resume') {
       // Open the external CV link
       window.open('https://drive.google.com/file/d/17FkvLZf7mpQ_fKpLMUTu8AA8udupfZJ1/view?usp=sharing', '_blank');
     } else {
       // Scroll to the corresponding section
-      onNavigate(sectionId);
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setActiveSection(sectionId);
+      }
     }
   };
+
   const navItems = [
     { text: 'PROJECTS', href: '#projects', id: 'projects' },
-    { text: 'ABOUT', href: '#about', id: 'about' },
     { text: 'SKILLS', href: '#skills', id: 'skills' },
-    { text: 'RESUME', href: 'https://www.jaclynpham.com/resume', id: 'resume' },
+    { text: 'EXPERIENCE', href: '#experience', id: 'experience' },
+    { text: 'RESUME', href: '#resume', id: 'resume' },
   ];
 
   return (

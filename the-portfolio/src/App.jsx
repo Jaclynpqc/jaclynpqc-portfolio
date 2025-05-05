@@ -9,10 +9,7 @@ import NotFound from './components/404';
 const HeroSection = React.lazy(() => import('./components/HeroSection'));
 const ProjectsSection = React.lazy(() => import('./components/HoverProjects'));
 const Skills = React.lazy(() => import('./components/ReceiptSkills'));
-const AboutMe = React.lazy(() => import('./components/AboutMe'));
-const ExperienceTimeline = React.lazy(() => import('./components/Experience'));
-const BrutalistResume = React.lazy(() => import('./components/DraftResume'));
-const ARHome = React.lazy(() => import('./components/ARHero'));
+const Experience = React.lazy(() => import('./components/Experience'));
 
 // Loading component
 const Loading = () => (
@@ -23,26 +20,22 @@ const Loading = () => (
 
 // Main content
 const Home = () => {
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <>
-      <NavigationBar onNavigate={scrollToSection} />
+      <NavigationBar />
       <main>
         <Suspense fallback={<Loading />}>
-          <section>
+          <section id="hero">
             <HeroSection />
           </section>
-          <section id="project" className="scroll-mt-20">
+          <section id="projects" className="scroll-mt-20">
             <ProjectsSection />
           </section>
           <section id="skills" className="scroll-mt-20">
             <Skills />
+          </section>
+          <section id="experience" className="scroll-mt-20">
+            <Experience />
           </section>
           <section>
             <Footer />
