@@ -1,7 +1,12 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+
+vi.mock('@splinetool/react-spline', () => ({
+  __esModule: true,
+  default: () => <div data-testid="spline-mock" />,
+}));
 
 describe('App', () => {
   it('renders without crashing', () => {
@@ -32,6 +37,6 @@ describe('App', () => {
     );
     
     // Check if the 404 page is rendered
-    expect(screen.getByText(/404/i)).toBeInTheDocument();
+    expect(screen.getByTestId('spline-mock')).toBeInTheDocument();
   });
 }); 

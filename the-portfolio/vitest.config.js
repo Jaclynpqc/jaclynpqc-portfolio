@@ -11,5 +11,8 @@ export default defineConfig({
     coverage: {
       reporter: ['text', 'json', 'html'],
     },
+    deps: {
+      inline: ['@splinetool/react-spline'],
+    },
   },
 }); 
