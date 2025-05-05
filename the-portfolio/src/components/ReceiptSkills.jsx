@@ -102,7 +102,7 @@ const Skills = () => {
   }
 
   return (
-    <div className="relative h-[50vh]"> {/* Fixed height to 50vh */}
+    <div className="relative min-h-screen py-20"> {/* Changed to min-h-screen and added padding */}
       {/* Background Layers */}
       <div className="absolute inset-0 bg-black/90">
         {/* Grid Layer */}
@@ -120,8 +120,8 @@ const Skills = () => {
       {/* Content Layer */}
       <div className="relative z-10">
         {/* Page Header */}
-        <div className="relative w-screen py-4 backdrop-blur-sm">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-black font-mono tracking-tight text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.7)] [text-stroke:1px_rgba(255,255,255,0.7)] p-0 mix-blend-difference backdrop-blur-sm"> {/* Reduced size */}
+        <div className="relative w-full py-4 backdrop-blur-sm">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-black font-mono tracking-tight text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.7)] [text-stroke:1px_rgba(255,255,255,0.7)] p-0 mix-blend-difference backdrop-blur-sm">
             HOW CAN I CONTRIBUTE TO YOUR PROJECT?
           </h1>
         </div>
@@ -143,7 +143,7 @@ const Skills = () => {
                       className="text-1xl md:text-2xl text-white/80 font-thin leading-none backdrop-blur-sm" 
                     />
                   </div>
-                  <div className="flex flex-wrap gap-2"> {/* Changed to flex-wrap with smaller gap */}
+                  <div className="flex flex-wrap gap-2">
                     {category.items.map((skill) => (
                       <button
                         key={skill.name}
@@ -163,7 +163,7 @@ const Skills = () => {
             </div>
   
             {/* Receipt Section */}
-            <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 h-full"> {/* Added h-full */}
+            <div className="relative bg-white/5 backdrop-blur-sm border border-white/10">
               <div className="p-4">
                 <div className="font-['Poppins'] text-white/80">
                   <h2 className="text-xl font-bold mb-2">RECEIPT</h2> 
@@ -177,7 +177,7 @@ const Skills = () => {
                     </div>
                     
                     {/* Scrollable items area */}
-                    <div className="h-[calc(50vh-200px)] overflow-y-auto scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-white/30">
+                    <div className="max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-white/30">
                       {purchasedSkills.length === 0 ? (
                         <p className="text-center text-white/50 py-2 text-xs"> 
                           Click on skills to add them to your receipt
@@ -185,7 +185,7 @@ const Skills = () => {
                       ) : (
                         <div className="grid grid-cols-2 gap-2"> 
                           {purchasedSkills.map((skill) => (
-                            <div key={skill} className="text-xs flex justify-between bg-white/5 p-1"> {/* Reduced text and padding */}
+                            <div key={skill} className="text-xs flex justify-between bg-white/5 p-1">
                               <span className="truncate mr-1">{skill}</span>
                               <span>1</span>
                             </div>
@@ -194,7 +194,7 @@ const Skills = () => {
                       )}
                     </div>
                   </div>
-                  <p className="text-xs my-2"> {/* Reduced from text-xl */}
+                  <p className="text-xs my-2">
                     Thank you for considering my skills!
                   </p>
                   {purchasedSkills.length > 0 && (
