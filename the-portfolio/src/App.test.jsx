@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
 vi.mock('@splinetool/react-spline', () => ({
@@ -10,30 +10,25 @@ vi.mock('@splinetool/react-spline', () => ({
 
 describe('App', () => {
   it('renders without crashing', () => {
-    render(
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    );
+    render(<App />, {
+      wrapper: MemoryRouter
+    });
   });
 
   it('renders the home page by default', () => {
-    render(
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    );
+    render(<App />, {
+      wrapper: MemoryRouter
+    });
     
     // Check if the navigation bar is present
     expect(screen.getByRole('navigation')).toBeInTheDocument();
   });
 
   it('renders 404 page for unknown routes', () => {
-    window.history.pushState({}, '', '/unknown-route');
     render(
-      <BrowserRouter>
+      <MemoryRouter initialEntries={['/unknown-route']}>
         <App />
-      </BrowserRouter>
+      </MemoryRouter>
     );
     
     // Check if the 404 page is rendered
